@@ -17,7 +17,7 @@ title: Cybernetisk Selskab 50 år
 email: 50@cyb.no
 description: >- # this means to ignore newlines until "baseurl:"
   En nettside som ble laget i forbindelse med Cybernetisk Selskab sitt 50 år jubileum
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "cyb50-bok-nett" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: cybernetisk
 github_username:  cybernetisk
