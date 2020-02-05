@@ -5,7 +5,7 @@ permalink: /person/morten-daehlen
 author: narve
 ---
 
-![morten-daehlen](/images/morten-daehlen.png "Illustrasjonsbilde av Morten Dæhlen"){:class="img-responsive"}
+![morten-daehlen](/src/images/morten-daehlen.png "Illustrasjonsbilde av Morten Dæhlen"){:class="img-responsive"}
 
 Morten Dæhlen ble i 2005 valgt instituttets første instituttleder, etter at instituttbestyrervervet var blitt avskaffet gjennom kvalitetsreformen og tilhørende endringer i universitetsloven. Forskjellen på en bestyrer og en leder er at lederen fikk større fullmakter, og antallet saker som krever styrebehandling blir færre. Han ble gjenvalgt for en ny periode i 2009. I 2012 ble han valgt til dekan ved det matematisk-naturvitenskaplige fakultetet. Der ble han gjenvalgt i 2016, og er således midt i sin andre dekanperiode.
 

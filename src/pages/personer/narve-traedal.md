@@ -5,7 +5,7 @@ permalink: /person/narve
 author: dag_og_maus
 ---
 
-![narve-traedal](/images/narve-traedal.png "Illustrasjonsbilde av Narve Trædal"){:class="img-responsive"}
+![narve-traedal](/src/images/narve-traedal.png "Illustrasjonsbilde av Narve Trædal"){:class="img-responsive"}
 
 ## Narve Trædal -- en engasjert Ifi-entusiast
 

@@ -5,7 +5,7 @@ permalink: /person/henrik-steen
 author: arne_hassel
 ---
 
-![henrik-steen](/images/henrik-steen.png "Illustrasjonsbilde av Henrik Steen"){:class="img-responsive"}
+![henrik-steen](/src/images/henrik-steen.png "Illustrasjonsbilde av Henrik Steen"){:class="img-responsive"}
 
 ## Henrik Steen -- 34 timer i et døgn
 

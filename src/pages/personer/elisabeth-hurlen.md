@@ -5,7 +5,7 @@ permalink: /person/elisabeth-hurlen
 author: narve
 ---
 
-![elisabeth-hurlen](/images/elisabeth-hurlen.png "Illustrasjonsbilde av Elisabeth Hurlen"){:class="img-responsive"}
+![elisabeth-hurlen](/src/images/elisabeth-hurlen.png "Illustrasjonsbilde av Elisabeth Hurlen"){:class="img-responsive"}
 
 ## Elisabeth Hurlen -- Ifis "mor" i krevende tider
 

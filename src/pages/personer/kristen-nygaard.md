@@ -6,7 +6,7 @@ author: egeil_ovrelid
 ---
 *Denne teksten ble original skrevet for studenttidsskriften Index 5. mai 2016. Vi har tatt den med i denne boken til glede for nye lesere.*
 
-![kristen-nygaard](/images/kristen-nygaard.png "Illustrasjonsbilde av Kristen Nygaard"){:class="img-responsive"}
+![kristen-nygaard](/src/images/kristen-nygaard.png "Illustrasjonsbilde av Kristen Nygaard"){:class="img-responsive"}
 
 ## Kristen Nygaards teknologiske konstruksjon av arbeidsplassdemokrati
 

@@ -22,6 +22,10 @@ export interface PageProps {
   children?: ReactNode;
   pageContext: {
     isCreatedByStatefulCreatePages: boolean;
+    frontmatter?: {
+      title?: string;
+      author?: string;
+    }
   };
   pathContext: {
     isCreatedByStatefulCreatePages: boolean;
