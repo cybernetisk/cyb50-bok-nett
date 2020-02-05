@@ -4,6 +4,9 @@
   "description": "CYB50 Jubileumsbok på nett",
   "version": "0.1.0",
   "author": "Arne Hassel <arne.hassel@gmail.com> (https://icanhasweb.net/)",
+  "contributors": [
+    "Mats Schjølberg <matsasc@cyb.no>"
+  ],
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
