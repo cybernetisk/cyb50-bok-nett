@@ -1,0 +1,44 @@
+---
+chapter: 31
+title: Chris Maile — En whiskykjenner uten like
+author: torgeir_lebesbye
+previous: /personer/ole-johan-dahl
+---
+
+import { graphql } from 'gatsby'
+import Figure from "../../components/figure";
+import Figcaption from "../../components/figcaption";
+import Image from "../../components/image";
+
+<Figure>
+  <Image src={props.data.personImage} />
+  <Figcaption>Illustrasjonsbilde av Chris Maile.</Figcaption>
+</Figure>
+
+Christopher John Maile er en vaskeekte skotte som siden årtusenskiftet har reist Norge på kryss og tvers for å lære nordmenn
+om de gyldne, skotske dråper. Han holdt det første whisky-seminaret for Cybernetisk Selskabs medlemmer vårsemesteret 2009,
+og har siden holdt et seminar i semesteret.
+
+Under seminarene serverer Chris av sin brede innsikt om whiskyens verden akkompagnert med barndomshistorier
+fra The Isle of Skye på Skottlands vestkyst, vitser om engelskmenn og sekkepipespill.
+
+Chris var initiativtaker til Oslo Whiskyfestival, som han har arrangert siden 2004.
+I 2005 ble han utnevnt til **Keeper of the Quaich**, en ærestittel for lang og tro tjeneste i den skotske whiskyindustrien.
+Som eneste i Norge ble han i 2016 utnevnt til den høyeste utmerkelse i industrien, **Master of the Quaich**.
+
+På CYBs generalforsamling høsten 2013 ble Chris utnevnt til æresmedlem av foreningen for
+det som etter ti semestre hadde blitt CYBs lengste tradisjon som fortsatt gjennomføres,
+og det 20. seminaret ble holdt høsten 2018 så det ser ut til å være en tradisjon som vil
+kunne fortsette å glede nye cybbere i lang tid.
+
+export const profileImageQuery = graphql`
+  query {
+    personImage: file(relativePath: { eq: "chris-maile/profil.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

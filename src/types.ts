@@ -25,6 +25,8 @@ export interface PageProps {
     frontmatter?: {
       title?: string;
       author?: string;
+      next?: string;
+      previous?: string;
     }
   };
   pathContext: {

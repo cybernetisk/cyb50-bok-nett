@@ -28,9 +28,31 @@ module.exports = {
       }
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-mdx`
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          chapters: require.resolve('./src/components/chapters-layout.tsx'),
+          default: require.resolve('./src/components/layout.tsx'),
+        }
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'chapters',
+        path: `${__dirname}/src/chapters`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        name: 'chapters',
+        path: `${__dirname}/src/chapters`,
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ]
-};
+}
