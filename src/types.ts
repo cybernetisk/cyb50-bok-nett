@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 export interface PageProps {
+  data?: any;
   path: string;
   navigate: Function;
   location: Location;

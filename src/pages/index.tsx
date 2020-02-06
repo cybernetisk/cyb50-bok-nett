@@ -1,18 +1,45 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { PageProps } from '../types'
+import { Chapters } from '../common/chapters'
+import TableOfContents from '../components/table-of-contents'
 
-const IndexPage = (props: PageProps) => (
-  <Layout {...props}>
-    <SEO title="Home"/>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+export default function Index (props: PageProps) {
+  const chapters = Chapters.fromEdges(Object.values(props.data.allMdx.edges).map((edge: any) => edge.node))
+  return (
+    <Layout {...props}>
+      <SEO title="Home"/>
+      <h1>Hi people</h1>
+      <p>Now go build something great.</p>
+      <TableOfContents chapters={chapters.list}/>
+    </Layout>
+  )
+}
 
-export default IndexPage
+export const chaptersQuery = graphql`
+query MyQuery {
+  allMdx {
+    totalCount
+    edges {
+      node {
+        body
+        frontmatter {
+          title
+          chapter
+          next
+          part
+          previous
+        }
+        parent {
+          ... on File {
+            relativePath
+          }
+        }
+      }
+    }
+  }
+}
+`
