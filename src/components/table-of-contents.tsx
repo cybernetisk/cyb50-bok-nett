@@ -8,7 +8,7 @@ interface Props {
 
 export default function TableOfContents ({ chapters }: Props) {
   return (
-    <ol>
+    <ol style={{listStyle: 'none'}}>
       {chapters.map(chapter => (
         <li key={chapter.path}>
           <Link to={chapter.path}>

@@ -1,6 +1,5 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { formatTitle } from '../common/text'
 
 interface Props {
   siteTitle: string;
@@ -20,17 +19,15 @@ const Header = ({ siteTitle }: Props) => (
         padding: `1.45rem 1.0875rem`
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          {formatTitle(siteTitle)}
-        </Link>
-      </h1>
+      <Link
+        to="/"
+        style={{
+          color: `white`,
+          textDecoration: `none`
+        }}
+      >
+        {siteTitle}
+      </Link>
     </div>
   </header>
 )

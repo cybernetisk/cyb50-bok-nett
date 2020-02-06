@@ -3,6 +3,7 @@ export interface Edge {
   frontmatter: {
     chapter: number | null
     next: string | null
+    order: number
     part: string | null
     partName: string | null
     previous: string | null
@@ -14,44 +15,17 @@ export interface Edge {
 }
 
 export class Chapters {
-  private root: Chapter | null = null
+  private map: {[order: number]: Chapter} = {}
 
   private constructor (edges: Edge[]) {
-    edges.forEach(edge => this.add(edge))
-  }
-
-  private add (edge: Edge): void {
-    const chapter = new Chapter(edge)
-    if (!this.root) {
-      this.root = chapter
-      return
-    }
-    if (!edge.frontmatter.previous || edge.frontmatter.next && edge.frontmatter.next === this.root.path) {
-      const oldRoot = this.root
-      this.root = chapter
-      this.root.next = oldRoot
-      return
-    }
-    this.root.next = chapter
+    edges.forEach(edge => {
+      this.map[edge.frontmatter.order] = new Chapter(edge)
+    })
   }
 
   get list (): Chapter[] {
-    if (!this.root) return []
-    let chapters = []
-    let level = 1
-    let current: Chapter | null = this.root
-    while (current) {
-      if (current.part) {
-        level = 1
-      }
-      current.level = level
-      chapters.push(current)
-      if (current.part) {
-        level = 2
-      }
-      current = current.next
-    }
-    return chapters
+    const list = Object.values(this.map)
+    return list.map((chapter, index) => chapter.copy(list[index - 1], list[index + 1]))
   }
 
   static fromEdges (edges: Edge[]): Chapters {
@@ -60,8 +34,6 @@ export class Chapters {
 }
 
 export class Chapter {
-  private _next?: Chapter
-
   public chapter: number | null
   public part: string | null
   public partName: string | null
@@ -69,9 +41,8 @@ export class Chapter {
   public pathNext: string | null
   public pathPrevious: string | null
   public title: string
-  public level: number = 0
 
-  constructor (edge: Edge) {
+  constructor (private edge: Edge, private previous: Chapter | null = null, private next: Chapter | null = null) {
     this.chapter = edge.frontmatter.chapter
     this.part = edge.frontmatter.part
     this.partName = edge.frontmatter.partName
@@ -81,22 +52,13 @@ export class Chapter {
     this.title = edge.frontmatter.title
   }
 
-  get next () {
-    return this._next || null
+  copy(previous: Chapter | null, next: Chapter | null): Chapter {
+    return new Chapter(this.edge, previous, next)
   }
 
-  set next (next: Chapter | null) {
-    if (!next) return
-    if (this._next && this._next.path === next.pathNext) {
-      const oldNext = this._next
-      this._next = next
-      this._next.next = oldNext
-      return
-    }
-    if (this._next) {
-      this._next.next = next
-      return
-    }
-    this._next = next
+  get level (): number {
+    if (!this.previous && !this.next) return 0
+    if (!this.previous || this.part) return 1
+    return 2
   }
 }

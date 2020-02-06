@@ -7,22 +7,20 @@ import { PageProps } from '../types'
 import { Chapters } from '../common/chapters'
 import TableOfContents from '../components/table-of-contents'
 
-export default function Index (props: PageProps) {
-  const chapters = Chapters.fromEdges(Object.values(props.data.allMdx.edges).map((edge: any) => edge.node))
+export default function Index ({ data }: PageProps) {
+  const chapters = Chapters.fromEdges(Object.values(data.allMdx.edges).map((edge: any) => edge.node))
   return (
-    <Layout {...props}>
-      <SEO title="Home"/>
-      <h1>Hi people</h1>
-      <p>Now go build something great.</p>
+    <Layout>
+      <SEO title={data.site.siteMetadata.title}/>
+      <h1>{data.site.siteMetadata.title}</h1>
       <TableOfContents chapters={chapters.list}/>
     </Layout>
   )
 }
 
 export const chaptersQuery = graphql`
-query MyQuery {
-  allMdx {
-    totalCount
+query TableOfContentsQuery {
+  allMdx(sort: {order: ASC, fields: frontmatter___order}) {
     edges {
       node {
         body
@@ -30,6 +28,7 @@ query MyQuery {
           title
           chapter
           next
+          order
           part
           partName
           previous
@@ -40,6 +39,11 @@ query MyQuery {
           }
         }
       }
+    }
+  }
+  site {
+    siteMetadata {
+      title
     }
   }
 }
