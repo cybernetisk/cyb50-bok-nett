@@ -2,7 +2,7 @@ import React from 'react'
 import { PageProps } from '../types'
 import Layout from './layout'
 
-export default function ({
+export default function ChaptersLayout ({
   children,
   ...props
 }: PageProps) {

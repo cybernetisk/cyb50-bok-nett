@@ -4,7 +4,7 @@ interface Props {
   children: any
 }
 
-export default function ({ children }: Props) {
+export default function Figure ({ children }: Props) {
   return (
     <figure>
       {children}

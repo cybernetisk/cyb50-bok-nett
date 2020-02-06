@@ -1,3 +1,3 @@
-export function formatTitle(title: string): string {
+export function formatTitle (title: string): string {
   return title.replace('--', '—')
 }

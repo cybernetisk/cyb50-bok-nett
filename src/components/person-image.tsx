@@ -1,5 +1,5 @@
-import React from "react";
-import Img from "gatsby-image";
+import React from 'react'
+import Img from 'gatsby-image'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -18,8 +18,8 @@ interface Props {
 
 const PersonImage = ({ src }: Props) => {
   return <div style={{ float: 'right', width: 200 }}>
-    <Img fluid={src.childImageSharp.fluid} />
+    <Img fluid={src.childImageSharp.fluid}/>
   </div>
-};
+}
 
-export default PersonImage;
+export default PersonImage

@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
-import React from "react";
+import { Link } from 'gatsby'
+import React from 'react'
 import { formatTitle } from '../common/text'
 
 interface Props {
@@ -33,6 +33,6 @@ const Header = ({ siteTitle }: Props) => (
       </h1>
     </div>
   </header>
-);
+)
 
-export default Header;
+export default Header
