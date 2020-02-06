@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Chapter } from '../common/chapters'
 import { Link } from 'gatsby'
 
@@ -12,10 +12,24 @@ export default function TableOfContents ({ chapters }: Props) {
       {chapters.map(chapter => (
         <li key={chapter.path}>
           <Link to={chapter.path}>
-            {chapter.title}
+            {chapter.part && PartBit(chapter.part, chapter.partName!)}
+            {chapter.chapter && ChapterBit(chapter.chapter)}
+            {!chapter.part && chapter.title}
           </Link>
         </li>
       ))}
     </ol>
   )
+}
+
+function ChapterBit (chapter: number): ReactNode {
+  return <>
+    <span>{chapter}</span>:&nbsp;
+  </>
+}
+
+function PartBit (part: string, partName: string): ReactNode {
+  return <>
+    <span>{part} - {partName}</span>
+  </>
 }

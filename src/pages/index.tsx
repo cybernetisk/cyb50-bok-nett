@@ -31,6 +31,7 @@ query MyQuery {
           chapter
           next
           part
+          partName
           previous
         }
         parent {
