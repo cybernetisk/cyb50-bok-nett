@@ -16,7 +16,7 @@ export default function TableOfContents ({ chapters, className }: Props) {
         <li key={chapter.path} className={`toc__item toc__item--level-${chapter.level}`}>
           <Link to={chapter.path} className={`toc__link toc__link--level-${chapter.level}`}>
             <span className="toc__link-text">{chapter.partName || chapter.short || chapter.title}</span>
-            <span className="toc__link-meta">
+            <span className="toc__link-meta" aria-hidden={true}>
               {chapter.part && PartBit(chapter.part)}
               {chapter.chapter && ChapterBit(chapter.chapter)}
             </span>
