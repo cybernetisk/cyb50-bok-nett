@@ -10,8 +10,14 @@
   }
 
   @media all and (min-width: $breakpoint-sm * 1em) {
+    &:not(&--position) .gatsby-image-wrapper {
+      margin: 0 auto;
+      width: 75%;
+    }
+
     &--position {
       margin: 1em;
+      max-width: 50%;
     }
 
     &--position-start {
