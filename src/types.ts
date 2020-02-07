@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
-export interface PageProps {
-  data?: any
+export interface PageProps<T> {
+  data: T
   path: string
   navigate: Function
   location: Location

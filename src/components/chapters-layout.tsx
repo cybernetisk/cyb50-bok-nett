@@ -7,7 +7,7 @@ import Header from './header'
 export default function ChaptersLayout ({
   children,
   ...props
-}: PageProps) {
+}: PageProps<any>) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
