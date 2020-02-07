@@ -5,12 +5,12 @@
   align-items: center;
   display: flex;
   padding: 1em;
+  text-decoration: none;
 
-  &__link {
+  &__title {
     flex-grow: 1;
     font-size: 36 / $font-size-default * 1rem;
     margin-inline-end: 0.5rem;
-    text-decoration: none;
 
     @media all and (min-width: $breakpoint-sm * 1em) {
       font-size: 50 / $font-size-default * 1rem;

@@ -7,9 +7,9 @@ interface Props {
 
 export default function Header ({ siteTitle }: Props) {
   return (
-    <header className="header">
-      <Link to="/" className="header__link">{siteTitle}</Link>
+    <Link to="/" className="header">
+      <span className="header__title">{siteTitle}</span>
       <img className="header__logo" src="/cyb50.svg" alt="CYB50 logo"/>
-    </header>
+    </Link>
   )
 }
