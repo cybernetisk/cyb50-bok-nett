@@ -6,7 +6,11 @@
 
   &__caption {
     color: $color-text-light;
-    margin: 0.5em 0 0;
+    margin: 0.25em 0 0;
+  }
+
+  .recharts-wrapper {
+    margin: 0 auto;
   }
 
   @media all and (min-width: $breakpoint-sm * 1em) {

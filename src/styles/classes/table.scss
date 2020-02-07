@@ -1,0 +1,44 @@
+@import "../breakpoints";
+@import "../colors";
+@import "../typography";
+
+.table {
+  overflow-x: auto;
+
+  @media all and (min-width: $breakpoint-md * 1em) {
+    margin: 1rem 40rem / $font-size-default;
+    overflow-x: initial;
+  }
+
+  caption {
+    color: $color-text-light;
+    margin-block-start: 0.25em;
+    text-align: start;
+  }
+
+  table {
+    border-collapse: collapse;
+    caption-side: bottom;
+    width: 100%;
+  }
+
+  td {
+    border: solid 1px $color-text-light;
+    @media all and (min-width: $breakpoint-md * 1em) {
+      padding: 0 0.2em;
+    }
+  }
+
+  thead {
+    font-weight: 400;
+    td {
+      background-color: lighten($color-background, 10%);
+    }
+  }
+
+  tbody {
+    .table__row--odd {
+      background: lighten($color-background, 5%);
+    }
+  }
+}
