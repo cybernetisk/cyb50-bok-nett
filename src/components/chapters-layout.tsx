@@ -30,8 +30,8 @@ export default function ChaptersLayout ({
         {props.pageContext.frontmatter?.author && <p>Skrevet av: {props.pageContext.frontmatter.author}</p>}
         {children}
         <nav className="chapter__nav">
-          {props.pageContext.frontmatter?.previous && <a className="chapter__nav-previous" href={props.pageContext.frontmatter.previous}>Forrige kapittel</a>}
-          {props.pageContext.frontmatter?.next && <a className="chapter__nav-next" href={props.pageContext.frontmatter.next}>Neste kapittel</a>}
+          {props.pageContext.frontmatter?.previous && <a className="chapter__nav-previous" href={props.pageContext.frontmatter.previous}>Forrige side</a>}
+          {props.pageContext.frontmatter?.next && <a className="chapter__nav-next" href={props.pageContext.frontmatter.next}>Neste side</a>}
         </nav>
       </Layout>
       <footer className="layout layout--footer footer">
