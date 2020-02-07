@@ -9,7 +9,8 @@
   }
 
   &--footer {
-    padding-block: 3em 0.5em;
+    padding-block-start: 3em;
+    padding-block-end: 0.5em;
   }
 
   @media all and (min-width: $breakpoint-md * 1em) {
