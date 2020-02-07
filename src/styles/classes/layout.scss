@@ -1,0 +1,20 @@
+@import "../breakpoints";
+
+.layout {
+  margin-block-end: 1em;
+  padding: 0 1em;
+
+  p {
+    hyphens: auto;
+  }
+
+  ol,
+  ul {
+    padding-inline-start: 1rem;
+  }
+
+  @media all and (min-width: $breakpoint-md * 1em) {
+    margin: 0 auto;
+    max-width: ($breakpoint-md + 5) * 1em;
+  }
+}

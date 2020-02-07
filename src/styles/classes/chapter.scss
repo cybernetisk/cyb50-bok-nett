@@ -1,0 +1,15 @@
+.chapter {
+
+  &__nav {
+    display: flex;
+  }
+
+  &__nav-previous {
+    flex-grow: 1;
+  }
+
+  &__nav-next {
+    flex-grow: 1;
+    text-align: end;
+  }
+}

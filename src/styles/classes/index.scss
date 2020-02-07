@@ -1,0 +1,11 @@
+.index {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__logo {
+    margin: 1em 0 0.5em;
+    max-width: 50%;
+  }
+}

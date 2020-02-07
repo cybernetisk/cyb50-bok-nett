@@ -1,22 +1,24 @@
 import React, { ReactNode } from 'react'
-import './layout.css'
+import '../styles/index.scss'
+import Helmet from 'react-helmet'
 
 interface Props {
   children: ReactNode
+  className?: string
 }
 
 export default function Layout ({
-  children
+  children,
+  className
 }: Props) {
-  return (
-    <main
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `0 1.0875rem 1.45rem`
-      }}
-    >
+  return <>
+    <Helmet
+      link={[
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400' }
+      ]}
+    />
+    <main className={`layout ${className}`}>
       {children}
     </main>
-  )
+  </>
 }

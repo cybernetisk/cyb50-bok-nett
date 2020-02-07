@@ -1,0 +1,29 @@
+@import "../breakpoints";
+@import "../colors";
+
+.figure {
+  margin: 1em 0;
+
+  &__caption {
+    color: $color-text-light;
+    margin: 0.5em 0 0;
+  }
+
+  @media all and (min-width: $breakpoint-sm * 1em) {
+    &--position {
+      margin: 1em;
+    }
+
+    &--position-start {
+      float: left;
+      float: start;
+      margin-inline-start: 0;
+    }
+
+    &--position-end {
+      float: right;
+      float: end;
+      margin-inline-end: 0;
+    }
+  }
+}

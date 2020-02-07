@@ -2,14 +2,12 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { PageProps } from '../types'
+import { Link } from 'gatsby'
 
-const NotFoundPage = (props: PageProps) => (
-  <Layout {...props}>
-    <SEO title="404: Not found"/>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+export default function NotFoundPage () {
+  return <Layout>
+    <SEO title="404: Side ikke funnet"/>
+    <h1>Fant ikke siden</h1>
+    <p>Du har kommet til en side som ikke finnes... <Link to="/">Gå til forsiden</Link></p>
   </Layout>
-)
-
-export default NotFoundPage
+}

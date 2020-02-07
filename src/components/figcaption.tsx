@@ -6,7 +6,7 @@ interface Props {
 
 export default function Figcaption ({ children }: Props) {
   return (
-    <figcaption>
+    <figcaption className="figure__caption">
       {children}
     </figcaption>
   )

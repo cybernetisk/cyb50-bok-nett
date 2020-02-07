@@ -2,6 +2,7 @@
 order: 3010
 chapter: 26
 title: Ole-Johan Dahl — Ifis faglige grunnlegger
+short: Ole-Johan Dahl
 author: Narve Trædal
 previous: /personer
 next: /personer/kristen-nygaard
@@ -12,7 +13,7 @@ import Image from "../../components/image";
 import Figure from "../../components/figure";
 import Figcaption from "../../components/figcaption";
 
-<Figure>
+<Figure position="end">
   <Image src={props.data.personImage} />
   <Figcaption>Illustrasjonsbilde av Ole-Johan Dahl.</Figcaption>
 </Figure>
@@ -25,11 +26,6 @@ brukt til langt opp i 1980-årene. Det var helt på høyde med den undervisninge
 amerikanske universitetene. Selv arbeidet han i disse årene særlig med formelle strukturer i dataprogrammer, og bidrog 
 på vesentlig vis til videreutvikling av programmeringsteori.
 
-<Figure>
-  <Image src={props.data.largerPersonImage} />
-  <Figcaption>UiOs første databehandlings-professor i 1972.</Figcaption>
-</Figure>
-
 Ved Institutt for informatikk var Ole-Johan Dahl først og fremst interessert i programvarens pålitelighet. Han forsket 
 innen fagfeltene programmeringsspråk, programspesifikasjon og verifikasjon, såkalte formelle metoder. Målet var å kunne 
 resonnere om programmer etter matematiske prinsipper, slik at man kan bevise at ønskede egenskaper er oppfylt – selv 
@@ -37,6 +33,11 @@ før programmene kjøres. I motsetning til konkret testing av programmer, kunne 
 en uendelighet av ulike «input», evt. alle mulige omgivelser. Dette fagfeltet belyser fundamentale vitenskapelige 
 aspekter innen informatikk, og har påvirket beslektede felt, ikke minst språk og metodikk for programmering og 
 problemspesifikasjon.
+
+<Figure>
+  <Image src={props.data.largerPersonImage} />
+  <Figcaption>UiOs første databehandlings-professor i 1972.</Figcaption>
+</Figure>
 
 Selv om bruk av formelle metoder kan være tidkrevende og kostbart i praktisk programutvikling, vil formelle metoder 
 kunne ha stor nytteverdi for anvendelser der store verdier eller menneskeliv kan gå tapt om det er feil i programvaren 

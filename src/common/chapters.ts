@@ -7,6 +7,7 @@ export interface Edge {
     part: string | null
     partName: string | null
     previous: string | null
+    short: string | null
     title: string
   }
   parent: {
@@ -40,6 +41,7 @@ export class Chapter {
   public path: string
   public pathNext: string | null
   public pathPrevious: string | null
+  public short: string | null
   public title: string
 
   constructor (private edge: Edge, private previous: Chapter | null = null, private next: Chapter | null = null) {
@@ -49,6 +51,7 @@ export class Chapter {
     this.path = '/' + edge.parent.relativePath.replace(/\/index\.mdx$/, '').replace(/\.mdx$/, '')
     this.pathNext = edge.frontmatter.next
     this.pathPrevious = edge.frontmatter.previous
+    this.short = edge.frontmatter.short
     this.title = edge.frontmatter.title
   }
 

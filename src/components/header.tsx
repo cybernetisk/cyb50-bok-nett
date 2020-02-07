@@ -5,31 +5,11 @@ interface Props {
   siteTitle: string;
 }
 
-const Header = ({ siteTitle }: Props) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
-      }}
-    >
-      <Link
-        to="/"
-        style={{
-          color: `white`,
-          textDecoration: `none`
-        }}
-      >
-        {siteTitle}
-      </Link>
-    </div>
-  </header>
-)
-
-export default Header
+export default function Header ({ siteTitle }: Props) {
+  return (
+    <header className="header">
+      <Link to="/" className="header__link">{siteTitle}</Link>
+      <img className="header__logo" src="/cyb50.svg" alt="CYB50 logo"/>
+    </header>
+  )
+}

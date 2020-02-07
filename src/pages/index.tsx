@@ -12,7 +12,12 @@ export default function Index ({ data }: PageProps) {
   return (
     <Layout>
       <SEO title={data.site.siteMetadata.title}/>
-      <h1>{data.site.siteMetadata.title}</h1>
+      <div className="index">
+        <img className="index__logo" src="/cyb50.svg" alt="CYB50 logo"/>
+        <h1 className="index__title">{data.site.siteMetadata.title}</h1>
+      </div>
+      <p>Velkommen til denne nettbaserte versjonen av jubileumsboken som ble gitt ut ifm Cybernetisk Selskab sitt 50-års jubileum i 2019.</p>
+      <p>Her finner du boken i sin helhet, samt oversikt over korrigeringer som er gjort i etterkant av publisering.</p>
       <TableOfContents chapters={chapters.list}/>
     </Layout>
   )
@@ -25,13 +30,14 @@ query TableOfContentsQuery {
       node {
         body
         frontmatter {
-          title
           chapter
           next
           order
           part
           partName
           previous
+          short
+          title
         }
         parent {
           ... on File {

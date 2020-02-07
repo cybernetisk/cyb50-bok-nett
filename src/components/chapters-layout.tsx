@@ -20,15 +20,17 @@ export default function ChaptersLayout ({
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title}/>
-      <Layout {...props}>
+      <Layout className="chapter">
         <h1>
           {props.pageContext.frontmatter?.part && PartBit(props.pageContext.frontmatter!.part, props.pageContext.frontmatter!.partName!)}
           {props.pageContext.frontmatter?.chapter && ChapterBit(props.pageContext.frontmatter.chapter)}
           {props.pageContext.frontmatter?.title}
         </h1>
         {children}
-        {props.pageContext.frontmatter?.previous && <a href={props.pageContext.frontmatter.previous}>Forrige kapittel</a>}
-        {props.pageContext.frontmatter?.next && <a href={props.pageContext.frontmatter.next}>Neste kapittel</a>}
+        <nav className="chapter__nav">
+          {props.pageContext.frontmatter?.previous && <a className="chapter__nav-previous" href={props.pageContext.frontmatter.previous}>Forrige kapittel</a>}
+          {props.pageContext.frontmatter?.next && <a className="chapter__nav-next" href={props.pageContext.frontmatter.next}>Neste kapittel</a>}
+        </nav>
       </Layout>
     </>
   )
