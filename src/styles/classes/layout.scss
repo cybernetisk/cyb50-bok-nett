@@ -13,6 +13,10 @@
     padding-inline-start: 1rem;
   }
 
+  &--footer {
+    padding-block: 3em 0.5em;
+  }
+
   @media all and (min-width: $breakpoint-md * 1em) {
     margin: 0 auto;
     max-width: ($breakpoint-md + 5) * 1em;

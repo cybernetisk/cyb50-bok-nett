@@ -3,6 +3,7 @@ import { PageProps } from '../types'
 import Layout from './layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'
+import Copyright from './copyright'
 
 export default function ChaptersLayout ({
   children,
@@ -32,6 +33,9 @@ export default function ChaptersLayout ({
           {props.pageContext.frontmatter?.next && <a className="chapter__nav-next" href={props.pageContext.frontmatter.next}>Neste kapittel</a>}
         </nav>
       </Layout>
+      <footer className="layout layout--footer footer">
+        <Copyright />
+      </footer>
     </>
   )
 }
