@@ -14,29 +14,37 @@ a {
   color: $color-text;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Roboto Slab', serif;
-  font-size: 44 / $font-size-default * 1rem;
   font-weight: 400;
   letter-spacing: -0.015em;
   line-height: 1.25;
   margin: 0.25em 0;
+}
 
+h1 {
+  font-size: 44 / $font-size-default * 1rem;
   @media all and (min-width: $breakpoint-md * 1em) {
     font-size: 50 / $font-size-default * 1rem;
   }
 }
 
 h2 {
-  font-family: 'Roboto Slab', serif;
   font-size: 33 / $font-size-default * 1rem;
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.25;
-  margin: 0.25em 0;
-
   @media all and (min-width: $breakpoint-md * 1em) {
     font-size: 36 / $font-size-default * 1rem;
+  }
+}
+
+h3 {
+  font-size: 28 / $font-size-default * 1rem;
+  @media all and (min-width: $breakpoint-md * 1em) {
+    font-size: 30 / $font-size-default * 1rem;
   }
 }
 
