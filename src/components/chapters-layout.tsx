@@ -23,9 +23,9 @@ export default function ChaptersLayout ({
       <Header siteTitle={data.site.siteMetadata.title}/>
       <Layout className="chapter">
         <h1>
-          {props.pageContext.frontmatter?.part && PartBit(props.pageContext.frontmatter!.part, props.pageContext.frontmatter!.partName!)}
+          {props.pageContext.frontmatter?.partName && PartBit(props.pageContext.frontmatter as PartProps)}
           {props.pageContext.frontmatter?.chapter && ChapterBit(props.pageContext.frontmatter.chapter)}
-          {props.pageContext.frontmatter?.title}
+          {!props.pageContext.frontmatter?.partName && props.pageContext.frontmatter?.title}
         </h1>
         {props.pageContext.frontmatter?.author && <p>Skrevet av: {props.pageContext.frontmatter.author}</p>}
         {children}
@@ -48,9 +48,14 @@ function ChapterBit (chapter: number): ReactNode {
   </>
 }
 
-function PartBit (part: string, partName: string): ReactNode {
+interface PartProps {
+  part: string
+  partNo: number
+  partName: string
+}
+function PartBit ({ part, partNo, partName }: PartProps): ReactNode {
   return <>
-    <span>Del {part} - {partName}</span>
-    <br/>
+    Del <span aria-hidden={true}>{part}</span><span className="sr sr--hidden">{partNo}</span><br/>
+    {partName}
   </>
 }
