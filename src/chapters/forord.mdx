@@ -4,6 +4,16 @@ title: Forord
 next: /historie
 ---
 
+import { graphql } from 'gatsby'
+import Figure from "../components/figure";
+import Figcaption from "../components/figcaption";
+import Image from "../components/image";
+
+<Figure position="end">
+  <Image src={props.data.personImage} />
+  <Figcaption>Skrevet av Arne Hassel</Figcaption>
+</Figure>
+
 Cybernetisk Selskab (CYB) er en formidabel forening på Institutt for informatikk (Ifi). I femti år har foreningen
 jobbet for å bedre forholdene for studenter, være det for dem som gikk linjen Kybernetikk eller for alle studenter på
 instituttet. Hva dette har betydd i praksis har endret seg gjennom tidene, fra å være rettet mot mer faglig og
@@ -31,10 +41,10 @@ vært mørke tider iblant, og det vil det også være fra tid til annen fremover
 engasjementet i CYB og på Ifi, så lever jeg i beste tro om at studentmiljøet på instituttet vil fortsette å være blant
 de aller beste å engasjere seg i.
 
-* Redaktør: Arne Hassel
-* Sjefsdesigner og LaTeX Veronika Heimsbakk
-* Designere Silje Merete Dahl, Katrine Gunnulfsen
-* Korrekturlesere Lee Kvåle, Trine Høyås, Eivind Hauger, Karl Hole Totland
+* **Redaktør:** Arne Hassel
+* **Sjefsdesigner og LaTeX:** Veronika Heimsbakk
+* **Designere:** Silje Merete Dahl, Katrine Gunnulfsen
+* **Korrekturlesere:** Lee Kvåle, Trine Høyås, Eivind Hauger, Karl Hole Totland
 
 ## Takk til
 
@@ -62,3 +72,15 @@ Silje Merethe Dahl, Siri A.M. Jensen, Siw E. Møller-Pettersen, Steinar Kjærnsr
 Thomas Ferris Nicolaisen, Tor Dokken og Vibeke Stoltenberg.
 
 [^1]:Strengt talt, forhåpentligvis velger å støtte boken. Innen boken er i trykk har ikke FU hatt tid til å formelt bestemme å gi støtten.
+
+export const profileImageQuery = graphql`
+  query {
+    personImage: file(relativePath: { eq: "preface-introduksjon/arne-hassel.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

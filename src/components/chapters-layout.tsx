@@ -27,6 +27,7 @@ export default function ChaptersLayout ({
           {props.pageContext.frontmatter?.chapter && ChapterBit(props.pageContext.frontmatter.chapter)}
           {props.pageContext.frontmatter?.title}
         </h1>
+        {props.pageContext.frontmatter?.author && <p>Skrevet av: {props.pageContext.frontmatter.author}</p>}
         {children}
         <nav className="chapter__nav">
           {props.pageContext.frontmatter?.previous && <a className="chapter__nav-previous" href={props.pageContext.frontmatter.previous}>Forrige kapittel</a>}

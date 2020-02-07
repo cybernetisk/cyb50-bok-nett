@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function ListOfChanges ({ changes, className }: Props) {
-  return <section className={clsx(className)}>
+  return <section className={clsx('loc', className)}>
     <h2>Endringslogg</h2>
     <ul className="changes">
       {changes.map(change => (
