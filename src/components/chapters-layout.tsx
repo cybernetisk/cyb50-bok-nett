@@ -25,7 +25,7 @@ export default function ChaptersLayout ({
         <h1>
           {props.pageContext.frontmatter?.partName && PartBit(props.pageContext.frontmatter as PartProps)}
           {props.pageContext.frontmatter?.chapter && ChapterBit(props.pageContext.frontmatter.chapter)}
-          {!props.pageContext.frontmatter?.partName && props.pageContext.frontmatter?.title}
+          {!props.pageContext.frontmatter?.partName && TitleBit(props.pageContext.frontmatter?.title!)}
         </h1>
         {props.pageContext.frontmatter?.author && <p>Skrevet av: {props.pageContext.frontmatter.author}</p>}
         {children}
@@ -39,6 +39,10 @@ export default function ChaptersLayout ({
       </footer>
     </>
   )
+}
+
+function TitleBit (title: string) {
+  return <span dangerouslySetInnerHTML={({ __html: title })} />
 }
 
 function ChapterBit (chapter: number): ReactNode {
