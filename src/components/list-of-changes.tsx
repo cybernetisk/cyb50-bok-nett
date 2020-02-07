@@ -1,4 +1,5 @@
 import React from 'react'
+import clsx from 'clsx'
 
 export interface Change {
   id: string
@@ -11,19 +12,19 @@ export interface Change {
 
 interface Props {
   changes: Change[]
+  className?: string
 }
 
-export default function ListOfChanges ({ changes }: Props) {
-  console.log(changes)
-  return <>
+export default function ListOfChanges ({ changes, className }: Props) {
+  return <section className={clsx(className)}>
     <h2>Endringslogg</h2>
-    <ul>
+    <ul className="changes">
       {changes.map(change => (
-        <li key={change.id}>
+        <li key={change.id} className="changes__item">
           <strong>{change.frontmatter.date} - {change.frontmatter.title}</strong>
           <div dangerouslySetInnerHTML={({ __html: change.html })}></div>
         </li>
       ))}
     </ul>
-  </>
+  </section>
 }

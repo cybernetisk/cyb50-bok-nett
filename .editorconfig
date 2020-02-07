@@ -16,6 +16,9 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = false
 max_line_length = 120
 
+[*.tsx]
+max_line_length = 120
+
 [{.travis.yml,package.json}]
 # The indent size used in the `package.json` file cannot be changed
 # https://github.com/npm/npm/pull/3180#issuecomment-16336516

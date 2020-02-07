@@ -7,6 +7,7 @@ import { PageProps } from '../types'
 import { Chapters, Edge } from '../common/chapters'
 import TableOfContents from '../components/table-of-contents'
 import ListOfChanges, { Change } from '../components/list-of-changes'
+import AboutPage from '../components/about-page'
 
 interface Data {
   site: {
@@ -34,16 +35,28 @@ export default function Index ({ data }: PageProps<Data>) {
   const chapters = Chapters.fromEdges(Object.values(data.allMdx.edges).map(edge => edge.node))
   const changes = Object.values(data.allMarkdownRemark.edges).map(edge => edge.node)
   return (
-    <Layout>
+    <Layout className="index">
       <SEO title={data.site.siteMetadata.title}/>
-      <div className="index">
-        <img className="index__logo" src="/cyb50.svg" alt="CYB50 logo"/>
-        <h1 className="index__title">{data.site.siteMetadata.title}</h1>
-      </div>
-      <p>Velkommen til denne nettbaserte versjonen av jubileumsboken som ble gitt ut ifm Cybernetisk Selskab sitt 50-års jubileum i 2019.</p>
-      <p>Her finner du boken i sin helhet, samt oversikt over korrigeringer som er gjort i etterkant av publisering.</p>
-      <TableOfContents chapters={chapters.list}/>
-      <ListOfChanges changes={changes}/>
+      <header className="index__header">
+        <img className="index__header-logo" src="/cyb50.svg" alt="CYB50 logo"/>
+        <h1 className="index__header-title">{data.site.siteMetadata.title}</h1>
+      </header>
+      <section className="index__description">
+        <p>
+          Velkommen til den nettbaserte versjonen av jubileumsboken som ble gitt ut ifm Cybernetisk Selskab sitt
+          50-års jubileum i 2019.
+        </p>
+        <p>
+          Her finner du boken i sin helhet, samt oversikt over korrigeringer som er gjort i etterkant av
+          publisering.
+        </p>
+        <p>
+          Boken er også <a href="/cyb50-bok.pdf">tilgjengelig i PDF-format (51.7 MB)</a>.
+        </p>
+      </section>
+      <TableOfContents chapters={chapters.list} className="index__toc"/>
+      <ListOfChanges changes={changes} className="index__loc"/>
+      <AboutPage className="index__about"/>
     </Layout>
   )
 }

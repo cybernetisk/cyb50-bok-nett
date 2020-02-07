@@ -1,11 +1,31 @@
-.index {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+@import "../breakpoints";
 
-  &__logo {
+.index {
+  &__header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__header-logo {
     margin: 1em 0 0.5em;
     max-width: 50%;
+  }
+
+  @media all and (min-width: $breakpoint-md * 1em) {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content min-content 1fr;
+
+    &__header,
+    &__description {
+      grid-column: span 2;
+    }
+
+    &__toc {
+      grid-row: span 2;
+    }
   }
 }

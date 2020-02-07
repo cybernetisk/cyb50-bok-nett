@@ -1,13 +1,15 @@
 import React, { ReactNode } from 'react'
 import { Chapter } from '../common/chapters'
 import { Link } from 'gatsby'
+import clsx from 'clsx'
 
 interface Props {
   chapters: Chapter[]
+  className?: string
 }
 
-export default function TableOfContents ({ chapters }: Props) {
-  return <>
+export default function TableOfContents ({ chapters, className }: Props) {
+  return <section className={clsx(className)}>
     <h2>Innholdsfortegnelse</h2>
     <ol className="toc">
       {chapters.map(chapter => (
@@ -22,7 +24,7 @@ export default function TableOfContents ({ chapters }: Props) {
         </li>
       ))}
     </ol>
-  </>
+  </section>
 }
 
 function ChapterBit (chapter: number): ReactNode {

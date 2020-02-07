@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import '../styles/index.scss'
 import Helmet from 'react-helmet'
+import clsx from 'clsx'
 
 interface Props {
   children: ReactNode
@@ -17,7 +18,7 @@ export default function Layout ({
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400' }
       ]}
     />
-    <main className={`layout ${className}`}>
+    <main className={clsx('layout', className)}>
       {children}
     </main>
   </>
