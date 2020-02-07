@@ -11,8 +11,7 @@
 
   @media all and (min-width: $breakpoint-sm * 1em) {
     &:not(&--position) {
-      margin: 0 auto;
-      width: 75%;
+      margin: 1rem 40rem / $font-size-default;
     }
 
     &--position {

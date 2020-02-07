@@ -12,6 +12,7 @@ import { graphql } from 'gatsby'
 import Figure from "../../components/figure";
 import Figcaption from "../../components/figcaption";
 import Image from "../../components/image";
+import MathJax from "react-mathjax"
 
 _Red.anm.: Denne teksten ble skrevet i anledning CYB sin 25-års feiring. Den er skrevet av Rolf Bjerknes, en person av 
 stor betydning for CYB, og vi følte denne teksten var viktig å få med i boken._
@@ -53,9 +54,9 @@ bruk for å utforme en avlang rundkjøring på Sergel's torg i Stockholm. Senere
 på samme måte, den sto ferdig til Olympiaden i 1968. En skjønner nå at emblemets ramme ble utformet ifølge ideer som 
 var høyst aktuelle på den tiden. Piet Hein brukte den generelle formelen
 
-... FORMEL ...
-
-\[ \scalebox{2}{$(x / a)^p + (y / b)^p = 1$} \]
+<MathJax.Provider>
+  <MathJax.Node formula="(x / a)^p + (y / b)^p = 1" />
+</MathJax.Provider>
 
 hvor han valgte eksponenten p = 2.5. Verdien p = 2.0 gir den vanlige ellipsen. Økende verdier av eksponenten gjør 
 figuren mer rektangulær. For rammen rundt CYBs emblem er det brukt verdiene a = 3 og b = 4. Piet Heins genistrek ligger 
