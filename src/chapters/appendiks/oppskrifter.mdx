@@ -4,3 +4,60 @@ title: Oppskrifter
 previous: /appendiks/domener
 next: /appendiks/drinker
 ---
+
+import { graphql } from 'gatsby'
+import Figure from "../../components/figure"
+import Image from "../../components/image"
+
+Etter ønske fra aktive i CYB har vi tatt med denne delen om oppskrifter.
+
+## Akkeloff
+
+«Akevittloff», bedre kjent som «akkeloff», er en relativt ny tradisjon i CYB sammenheng. 
+
+Originalt oppdaget tidlig våren 2015, da Nikolas Papaioannou skulle «akkes inn»[^1] litt ekstra etter å ha blitt 
+valgt til vervet Kjellermogul.
+
+<Figure>
+  <Image src={props.data.akkeloff} />
+</Figure>
+
+Porsjoner: 1
+
+### Ingredienser og utstyr
+
+* 1 stk papptallerken (kan erstattes ut med andre beholdere for brød og/eller brennevin)
+* 1 stk loffskive
+* 4cl akevitt
+* 4cl til akevitt
+
+### Framgang
+
+* Legg en (1) stk loff på en papptallerken
+* Tilsett 4cl med akevitt
+* _Legg merke til at det ikke er nok_
+* Tilsett akevitt til skiven er mettet
+
+Inntas hel, og i én munnfull.
+
+[^1]:Å ta et shot med akevitt i sammenheng med at man tiltrer et verv. Må ikke forvirres med det å «whiskes ut» som 
+  skjer ifb. at man fratrer et verv. Man kan både akkes inn og whiskes ut på samme generalforsamling om man både 
+  fratrer og tiltrer et verv.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/}
+\end{figure}
+
+export const imagesQuery = graphql`
+  query {
+    akkeloff: file(relativePath: { eq: "oppskrifter/akkeloff.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
