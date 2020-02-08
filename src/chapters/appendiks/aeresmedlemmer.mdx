@@ -4,3 +4,23 @@ title: Æresmedlemmer
 previous: /appendiks/kjellerstyrer
 next: /appendiks/domener
 ---
+
+import { graphql } from 'gatsby'
+import HonoraryMembers from "../../components/honorary-members"
+
+Liste over personer som har fått CYBs æresmedlemskap.
+
+<HonoraryMembers data={props.data.allAeresmedlemmerCsv} />
+
+export const honoryMembersQuery = graphql`
+  query {
+    allAeresmedlemmerCsv {
+      edges {
+        node {
+          name
+          date
+        }
+      }
+    }
+  }
+`
