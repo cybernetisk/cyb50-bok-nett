@@ -1,6 +1,27 @@
 ---
 order: 10010
-title: CYBs Hovedstyre opp gjennom tidene
+title: CYBs Hovedstyrer opp gjennom tidene
+short: Hovedstyrer
 previous: /appendiks
 next: /appendiks/kjellerstyrer
 ---
+
+import { graphql } from 'gatsby'
+import Boards from "../../components/boards"
+
+<Boards data={props.data.allHovedstyrerCsv} />
+
+export const associationsQuery = graphql`
+  query {
+    allHovedstyrerCsv {
+      edges {
+        node {
+          name
+          year
+          part
+          title
+        }
+      }
+    }
+  }
+`

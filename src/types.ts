@@ -37,3 +37,5 @@ export interface PageProps<T> {
     isCreatedByStatefulCreatePages: boolean
   }
 }
+
+export type booleanString = '0' | '1'
