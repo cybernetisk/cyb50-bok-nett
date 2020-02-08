@@ -11,7 +11,7 @@ export default function DefinitionList ({ data, variant }: Props) {
     [`definition-list--${variant}`]: variant
   })}>
     {data.map((point, index) => <React.Fragment key={index}>
-      <dt>{point[0]}</dt>
+      <dt dangerouslySetInnerHTML={({__html: point[0]})} />
       <dd dangerouslySetInnerHTML={({__html: point[1]})} />
     </React.Fragment>)}
   </dl>
