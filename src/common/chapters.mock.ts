@@ -1,27 +1,28 @@
 import { Edge } from './chapters'
 
 export const edges: Edge[] = [
-  generateItem('3', 'baz/index.mdx', null, 100),
-  generateItem('4', 'bam.mdx', 'II', 150),
-  generateItem('2', 'bar.mdx', 'I', 3),
-  generateItem('5', 'ban.mdx', null, 1000),
-  generateItem('1', 'foo.mdx', null, 0)
+  generateItem('3', null, 100),
+  generateItem('4', 'II', 150),
+  generateItem('2', 'I', 3),
+  generateItem('5', null, 1000),
+  generateItem('1', null, 0)
 ]
 
-function generateItem (title: string, relativePath: string, part: string | null, order: number) {
+function generateItem (title: string, partName: string | null, order: number): Edge {
   return {
     body: '',
     frontmatter: {
       chapter: null,
-      title,
       next: null,
       order,
-      part,
-      partName: null,
-      previous: null
+      part: null,
+      partName,
+      previous: null,
+      short: null,
+      title,
     },
     parent: {
-      relativePath
+      relativePath: ''
     }
   }
 }

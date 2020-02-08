@@ -61,7 +61,7 @@ export class Chapter {
 
   get level (): number {
     if (!this.previous && !this.next) return 0
-    if (!this.previous || this.part) return 1
+    if (!this.previous || this.partName) return 1
     return 2
   }
 }
