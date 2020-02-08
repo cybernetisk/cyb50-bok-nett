@@ -1,5 +1,6 @@
 @import "../breakpoints";
 @import "../colors";
+@import "../typography";
 
 .figure {
   margin: 1em 0;
@@ -7,6 +8,10 @@
   &__caption {
     color: $color-text-light;
     margin: 0.25em 0 0;
+  }
+
+  img {
+    background-color: white;
   }
 
   .recharts-wrapper {
