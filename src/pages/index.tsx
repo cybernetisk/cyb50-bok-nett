@@ -4,8 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { PageProps } from '../types'
-import { Chapters, Edge } from '../common/chapters'
-import TableOfContents from '../components/table-of-contents'
+import TableOfContents, { TableOfContentsData } from '../components/table-of-contents'
 import ListOfChanges, { Change } from '../components/list-of-changes'
 import AboutPage from '../components/about-page'
 
@@ -15,13 +14,7 @@ interface Data {
       title: string
     }
   }
-  allMdx: {
-    edges: {
-      [key: string]: {
-        node: Edge
-      }
-    }
-  }
+  allMdx: TableOfContentsData,
   allMarkdownRemark: {
     edges: {
       [key: string]: {
@@ -32,7 +25,6 @@ interface Data {
 }
 
 export default function Index ({ data }: PageProps<Data>) {
-  const chapters = Chapters.fromEdges(Object.values(data.allMdx.edges).map(edge => edge.node))
   const changes = Object.values(data.allMarkdownRemark.edges).map(edge => edge.node)
   return (
     <Layout className="index">
@@ -54,7 +46,7 @@ export default function Index ({ data }: PageProps<Data>) {
           Boken er også <a href="/cyb50-bok.pdf">tilgjengelig i PDF-format (51.7 MB)</a>.
         </p>
       </section>
-      <TableOfContents chapters={chapters.list} className="index__toc"/>
+      <TableOfContents data={data.allMdx} className="index__toc"/>
       <ListOfChanges changes={changes} className="index__loc"/>
       <AboutPage className="index__about"/>
     </Layout>
