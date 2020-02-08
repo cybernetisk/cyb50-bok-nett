@@ -2,12 +2,13 @@ import React, { ReactNode } from 'react'
 import Layout from './layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'
-import Copyright from './copyright'
+import License from './license'
 import Helmet from 'react-helmet'
 
 interface Frontmatter {
   author?: string
   chapter?: number
+  license?: string
   next?: string
   part: string
   partNo?: number
@@ -65,9 +66,9 @@ export default function ChaptersLayout ({ children, pageContext }: Props) {
           <a className="chapter__nav-next" href={pageContext.frontmatter.next}>Neste side</a>}
         </nav>
       </Layout>
-      <footer className="layout layout--footer footer">
-        <Copyright/>
-      </footer>
+      {pageContext.frontmatter.license && <footer className="layout layout--footer footer">
+        <License license={pageContext.frontmatter.license}/>
+      </footer>}
     </>
   )
 }
