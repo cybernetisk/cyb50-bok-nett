@@ -13,6 +13,10 @@
     max-width: 50%;
   }
 
+  &__header-title {
+    margin: 0;
+  }
+
   @media all and (min-width: $breakpoint-md * 1em) {
     display: grid;
     grid-gap: 1em;

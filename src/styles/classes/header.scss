@@ -8,6 +8,7 @@
   text-decoration: none;
 
   &__title {
+    font-family: 'Roboto Slab', serif;
     flex-grow: 1;
     font-size: 36 / $font-size-default * 1rem;
     margin-inline-end: 0.5rem;
