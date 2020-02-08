@@ -1,6 +1,27 @@
 ---
 order: 10020
 title: CYBs Kjellerstyrer opp gjennom tidene
+short: Kjellerstyrer
 previous: /appendiks/hovedstyrer
 next: /appendiks/aeresmedlemmer
 ---
+
+import { graphql } from 'gatsby'
+import Boards from "../../components/boards"
+
+<Boards data={props.data.allKjellerstyrerCsv} />
+
+export const associationsQuery = graphql`
+  query {
+    allKjellerstyrerCsv {
+      edges {
+        node {
+          name
+          year
+          part
+          title
+        }
+      }
+    }
+  }
+`
