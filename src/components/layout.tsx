@@ -12,6 +12,7 @@ export default function Layout ({
   children,
   className
 }: Props) {
+  if (typeof window !== 'undefined') setupKeyboardListeners()
   return <>
     <Helmet
       link={[
@@ -22,4 +23,22 @@ export default function Layout ({
       {children}
     </main>
   </>
+}
+
+function setupKeyboardListeners () {
+  setTimeout(() => {
+    setupKeyboardNavigation('link[rel="next"]', 'ArrowRight')
+    setupKeyboardNavigation('link[rel="prev"]', 'ArrowLeft')
+  }, 100)
+}
+
+function setupKeyboardNavigation (selector: string, code: string) {
+  const element = document.querySelector(selector) as HTMLLinkElement
+  if (element) {
+    window.addEventListener('keyup', event => {
+      if (event.code === code) {
+        location.href = element.getAttribute('href')!
+      }
+    })
+  }
 }

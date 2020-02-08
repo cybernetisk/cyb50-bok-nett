@@ -3,10 +3,10 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { PageProps } from '../types'
 import TableOfContents, { TableOfContentsData } from '../components/table-of-contents'
 import ListOfChanges, { Change } from '../components/list-of-changes'
 import AboutPage from '../components/about-page'
+import Helmet from 'react-helmet'
 
 interface Data {
   site: {
@@ -24,11 +24,18 @@ interface Data {
   }
 }
 
-export default function Index ({ data }: PageProps<Data>) {
+interface Props {
+  data: Data
+}
+
+export default function Index ({ data }: Props) {
   const changes = Object.values(data.allMarkdownRemark.edges).map(edge => edge.node)
   return (
     <Layout className="index">
       <SEO title={data.site.siteMetadata.title}/>
+      <Helmet link={[
+        { rel: 'next', href: '/forord'}
+      ]}/>
       <header className="index__header">
         <img className="index__header-logo" src="/cyb50.svg" alt="CYB50 logo"/>
         <h1 className="index__header-title">{data.site.siteMetadata.title}</h1>

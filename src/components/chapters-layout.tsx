@@ -1,15 +1,40 @@
 import React, { ReactNode } from 'react'
-import { PageProps } from '../types'
 import Layout from './layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'
 import Copyright from './copyright'
+import Helmet from 'react-helmet'
 
-export default function ChaptersLayout ({
-  children,
-  ...props
-}: PageProps<any>) {
-  const data = useStaticQuery(graphql`
+interface Frontmatter {
+  author?: string
+  chapter?: number
+  next?: string
+  part: string
+  partNo?: number
+  partName?: string
+  previous?: string
+  title: string
+}
+
+type LinkProps = JSX.IntrinsicElements['link']
+
+interface Props {
+  children: ReactNode
+  pageContext: {
+    frontmatter: Frontmatter
+  }
+}
+
+interface Data {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+}
+
+export default function ChaptersLayout ({ children, pageContext }: Props) {
+  const data = useStaticQuery<Data>(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -20,29 +45,35 @@ export default function ChaptersLayout ({
   `)
   return (
     <>
+      <Helmet link={[
+        { rel: 'prev', href: pageContext.frontmatter.previous || '/' },
+        { rel: 'next', href: pageContext.frontmatter.next || '/' }
+      ]}/>
       <Header siteTitle={data.site.siteMetadata.title}/>
       <Layout className="chapter">
         <h1>
-          {props.pageContext.frontmatter?.partName && PartBit(props.pageContext.frontmatter as PartProps)}
-          {props.pageContext.frontmatter?.chapter && ChapterBit(props.pageContext.frontmatter.chapter)}
-          {!props.pageContext.frontmatter?.partName && TitleBit(props.pageContext.frontmatter?.title!)}
+          {pageContext.frontmatter.partName && PartBit(pageContext.frontmatter)}
+          {pageContext.frontmatter.chapter && ChapterBit(pageContext.frontmatter.chapter)}
+          {!pageContext.frontmatter.partName && TitleBit(pageContext.frontmatter.title)}
         </h1>
-        {props.pageContext.frontmatter?.author && <p>Skrevet av {props.pageContext.frontmatter.author}</p>}
+        {pageContext.frontmatter.author && <p>Skrevet av {pageContext.frontmatter.author}</p>}
         {children}
         <nav className="chapter__nav">
-          {props.pageContext.frontmatter?.previous && <a className="chapter__nav-previous" href={props.pageContext.frontmatter.previous}>Forrige side</a>}
-          {props.pageContext.frontmatter?.next && <a className="chapter__nav-next" href={props.pageContext.frontmatter.next}>Neste side</a>}
+          {pageContext.frontmatter.previous &&
+          <a className="chapter__nav-previous" href={pageContext.frontmatter.previous}>Forrige side</a>}
+          {pageContext.frontmatter.next &&
+          <a className="chapter__nav-next" href={pageContext.frontmatter.next}>Neste side</a>}
         </nav>
       </Layout>
       <footer className="layout layout--footer footer">
-        <Copyright />
+        <Copyright/>
       </footer>
     </>
   )
 }
 
 function TitleBit (title: string) {
-  return <span dangerouslySetInnerHTML={({ __html: title })} />
+  return <span dangerouslySetInnerHTML={({ __html: title })}/>
 }
 
 function ChapterBit (chapter: number): ReactNode {
@@ -52,12 +83,7 @@ function ChapterBit (chapter: number): ReactNode {
   </>
 }
 
-interface PartProps {
-  part: string
-  partNo: number
-  partName: string
-}
-function PartBit ({ part, partNo, partName }: PartProps): ReactNode {
+function PartBit ({ part, partNo, partName }: Frontmatter): ReactNode {
   return <>
     Del <span aria-hidden={true}>{part}</span><span className="sr sr--hidden">{partNo}</span><br/>
     {partName}
