@@ -30,13 +30,13 @@
 
     &--position-start {
       float: left;
-      float: start;
+      float: inline-start;
       margin-inline-start: 0;
     }
 
     &--position-end {
       float: right;
-      float: end;
+      float: inline-end;
       margin-inline-end: 0;
     }
   }
