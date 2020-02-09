@@ -1,0 +1,34 @@
+@import "../typography";
+@import "../breakpoints";
+
+.header {
+  align-items: center;
+  display: flex;
+  padding: 1em;
+  text-decoration: none;
+
+  &__title {
+    font-family: 'Roboto Slab', serif;
+    flex-grow: 1;
+    font-size: 36 / $font-size-default * 1rem;
+    margin-inline-end: 0.5rem;
+
+    @media all and (min-width: $breakpoint-sm * 1em) {
+      font-size: 50 / $font-size-default * 1rem;
+    }
+
+    @media all and (min-width: $breakpoint-md * 1em) {
+      font-size: 60 / $font-size-default * 1rem;
+    }
+  }
+
+  &__logo {
+    max-width: 140px;
+    width: 40%;
+  }
+
+  @media all and (min-width: $breakpoint-md * 1em) {
+    margin: 0 auto;
+    max-width: ($breakpoint-md + 5) * 1em;
+  }
+}

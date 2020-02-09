@@ -1,0 +1,43 @@
+@import "../breakpoints";
+@import "../colors";
+@import "../typography";
+
+.figure {
+  margin: 1em 0;
+
+  &__caption {
+    color: $color-text-light;
+    margin: 0.25em 0 0;
+  }
+
+  img {
+    background-color: white;
+  }
+
+  .recharts-wrapper {
+    margin: 0 auto;
+  }
+
+  @media all and (min-width: $breakpoint-sm * 1em) {
+    &:not(&--position) {
+      margin: 1rem 40rem / $font-size-default;
+    }
+
+    &--position {
+      margin: 1em;
+      max-width: 50%;
+    }
+
+    &--position-start {
+      float: left;
+      float: inline-start;
+      margin-inline-start: 0;
+    }
+
+    &--position-end {
+      float: right;
+      float: inline-end;
+      margin-inline-end: 0;
+    }
+  }
+}

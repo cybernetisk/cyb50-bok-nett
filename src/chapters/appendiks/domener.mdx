@@ -1,0 +1,26 @@
+---
+order: 10040
+title: Domener
+previous: /appendiks/aeresmedlemmer
+next: /appendiks/oppskrifter
+---
+
+import { graphql } from 'gatsby'
+import Domains from "../../components/domains"
+
+Liste over domener som CYB eier.
+
+<Domains data={props.data.allDomenerCsv} />
+
+export const honoryMembersQuery = graphql`
+  query {
+    allDomenerCsv {
+      edges {
+        node {
+          url
+          description
+        }
+      }
+    }
+  }
+`

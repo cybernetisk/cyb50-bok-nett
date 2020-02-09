@@ -1,0 +1,37 @@
+---
+order: 2090
+chapter: 25
+title: Foreninger tilknyttet Ifi
+short: Foreninger
+license: CC BY-NC 4.0
+previous: /studentliv/kvinneandelen
+next: /personer
+---
+
+import { graphql } from 'gatsby'
+import Associations from "../../components/associations"
+
+Det er etterhvert mange foreninger som er eller har vært aktive på Ifi eller har en sterk tilknytning til 
+instituttet. Dette er et forsøk på å liste opp dem man vet om[^1].
+
+<Associations active={true} data={props.data.allForeningerCsv} />
+
+## Ikke lenger aktive
+
+<Associations active={false} data={props.data.allForeningerCsv} />
+
+[^1]:Hentet fra [Ifi-ordenen sine sider](http://ordenen.ifi.uio.no/association/) og med hjelp fra aktive i CYB
+
+export const associationsQuery = graphql`
+  query {
+    allForeningerCsv(sort: {fields: name, order: ASC}) {
+      edges {
+        node {
+          active
+          name
+          description
+        }
+      }
+    }
+  }
+`

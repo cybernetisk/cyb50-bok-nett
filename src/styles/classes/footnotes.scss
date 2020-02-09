@@ -1,0 +1,17 @@
+@import "../colors";
+
+.footnotes {
+  color: $color-text-light;
+
+  hr {
+    display: none;
+  }
+
+  ol {
+    padding-inline-start: 1rem;
+  }
+}
+
+.footnote-backref {
+  padding-inline-start: 0.25em;
+}

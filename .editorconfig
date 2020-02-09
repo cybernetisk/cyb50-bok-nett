@@ -12,8 +12,12 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.md]
+[*.mdx]
 trim_trailing_whitespace = false
+max_line_length = 120
+
+[*.tsx]
+max_line_length = 120
 
 [{.travis.yml,package.json}]
 # The indent size used in the `package.json` file cannot be changed

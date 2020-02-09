@@ -1,0 +1,36 @@
+@import "../colors";
+@import "../typography";
+
+.toc {
+  list-style: none;
+  margin: 1em -0.5em;
+  padding: 0;
+
+  &__link {
+    align-items: baseline;
+    display: flex;
+    font-family: 'Roboto Slab', serif;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+
+    &--level-2 {
+      padding-inline-start: 1.25em;
+    }
+
+    &:hover {
+      background-color: lighten($color-background, 10%);
+    }
+  }
+
+  &__link-text {
+    flex-grow: 1;
+    hyphens: auto;
+  }
+
+  &__link-meta {
+    color: $color-text-light;
+    font-size: $font-size-small;
+    text-align: end;
+    width: 50px;
+  }
+}
