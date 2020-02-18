@@ -1,15 +1,24 @@
+@import "../colors";
+
 .chapter {
   &__nav {
     display: flex;
     margin-block-start: 1em;
   }
 
-  &__nav-previous {
+  &__nav-link {
     flex-grow: 1;
+    text-decoration: none;
+    &--next {
+      text-align: end;
+    }
   }
 
-  &__nav-next {
-    flex-grow: 1;
-    text-align: end;
+  &__nav-link-description {
+    color: $color-text-light;
+  }
+
+  &__nav-link-name {
+    text-decoration: underline;
   }
 }

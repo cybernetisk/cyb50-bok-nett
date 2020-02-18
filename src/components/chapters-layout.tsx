@@ -4,12 +4,14 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'
 import License from './license'
 import Helmet from 'react-helmet'
+import { TableOfContentsData } from './table-of-contents'
 
 interface Frontmatter {
   author?: string
   chapter?: number
   license?: string
   next?: string
+  order: number
   part: string
   partNo?: number
   partName?: string
@@ -32,18 +34,13 @@ interface Data {
       title: string
     }
   }
+  allMdx: TableOfContentsData
 }
 
 export default function ChaptersLayout ({ children, pageContext }: Props) {
-  const data = useStaticQuery<Data>(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const data = query()
+  const chapters = Object.values(data.allMdx.edges).map(edge => edge.node)
+  const chapterIndex = chapters.findIndex(chapter => chapter.frontmatter.order === pageContext.frontmatter.order)
   return (
     <>
       <Helmet link={[
@@ -60,10 +57,20 @@ export default function ChaptersLayout ({ children, pageContext }: Props) {
         {pageContext.frontmatter.author && <p>Skrevet av {pageContext.frontmatter.author}</p>}
         {children}
         <nav className="chapter__nav">
-          {pageContext.frontmatter.previous &&
-          <a className="chapter__nav-previous" href={pageContext.frontmatter.previous}>Forrige side</a>}
-          {pageContext.frontmatter.next &&
-          <a className="chapter__nav-next" href={pageContext.frontmatter.next}>Neste side</a>}
+          {pageContext.frontmatter.previous && (
+            <a className="chapter__nav-link chapter__nav-link--previous" href={pageContext.frontmatter.previous}>
+              <span className="chapter__nav-link-description">Forrige side</span>
+              <br/>
+              <span className="chapter__nav-link-name">{chapters[chapterIndex - 1].frontmatter.title}</span>
+            </a>
+          )}
+          {pageContext.frontmatter.next && (
+            <a className="chapter__nav-link chapter__nav-link--next" href={pageContext.frontmatter.next}>
+              <span className="chapter__nav-link-description">Neste side</span>
+              <br />
+              <span className="chapter__nav-link-name">{chapters[chapterIndex + 1].frontmatter.title}</span>
+            </a>
+          )}
         </nav>
       </Layout>
       {pageContext.frontmatter.license && <footer className="layout layout--footer footer">
@@ -71,6 +78,40 @@ export default function ChaptersLayout ({ children, pageContext }: Props) {
       </footer>}
     </>
   )
+}
+
+function query () {
+  return useStaticQuery<Data>(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+      allMdx(sort: {order: ASC, fields: frontmatter___order}) {
+        edges {
+          node {
+            body
+            frontmatter {
+              chapter
+              next
+              order
+              part
+              partName
+              previous
+              short
+              title
+            }
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 }
 
 function TitleBit (title: string) {
