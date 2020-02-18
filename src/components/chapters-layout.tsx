@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Header from './header'
 import License from './license'
 import Helmet from 'react-helmet'
-import { TableOfContentsData } from './table-of-contents'
+import TableOfContents, { TableOfContentsData } from './table-of-contents'
 
 interface Frontmatter {
   author?: string
@@ -72,6 +72,7 @@ export default function ChaptersLayout ({ children, pageContext }: Props) {
             </a>
           )}
         </nav>
+        <TableOfContents data={data.allMdx} className="chapter__toc"/>
       </Layout>
       {pageContext.frontmatter.license && <footer className="layout layout--footer footer">
         <License license={pageContext.frontmatter.license}/>

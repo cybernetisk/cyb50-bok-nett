@@ -53,7 +53,9 @@ export default function Index ({ data }: Props) {
           Boken er også <a href="/cyb50-bok.pdf">tilgjengelig i PDF-format (51.7 MB)</a>.
         </p>
       </section>
-      <TableOfContents data={data.allMdx} className="index__toc"/>
+      <TableOfContents data={data.allMdx} className="index__toc">
+        <h2>Innholdsfortegnelse</h2>
+      </TableOfContents>
       <ListOfChanges changes={changes} className="index__loc"/>
       <AboutPage className="index__about"/>
     </Layout>

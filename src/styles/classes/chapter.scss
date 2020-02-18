@@ -1,3 +1,4 @@
+@import "../breakpoints";
 @import "../colors";
 
 .chapter {
@@ -9,6 +10,7 @@
   &__nav-link {
     flex-grow: 1;
     text-decoration: none;
+
     &--next {
       text-align: end;
     }
@@ -20,5 +22,27 @@
 
   &__nav-link-name {
     text-decoration: underline;
+  }
+
+  @media all and (min-width: $breakpoint-md-layout * 1.75) {
+    display: grid;
+    grid-template-columns: 1fr $breakpoint-md-layout / 2 $breakpoint-md-layout / 2 1fr;
+    margin: 0 auto;
+    max-width: $breakpoint-md-layout * 1.75;
+
+    > * {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+
+    &__toc {
+      grid-column-start: 4;
+      grid-row-start: 1;
+      grid-row-end: 100;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }

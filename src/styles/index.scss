@@ -3,6 +3,7 @@
 @import "tags";
 
 // classes
+@import "classes/layout"; // needs to be before chapter
 @import "classes/boards";
 @import "classes/changes";
 @import "classes/chapter";
@@ -12,7 +13,6 @@
 @import "classes/footnotes";
 @import "classes/header";
 @import "classes/index";
-@import "classes/layout";
 @import "classes/loc";
 @import "classes/sr";
 @import "classes/table";
