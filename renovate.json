@@ -1,5 +1,27 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "masterIssue": true,
+  "automergeType": "branch",
+  "lockFileMaintenance": {
+    "automerge": true,
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "groupName": "gatsby",
+      "packagePatterns": [
+        "gatsby"
+      ],
+      "automerge": true
+    },
+    {
+      "updateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ],
+  "pin": {
+    "automerge": true
+  }
 }
