@@ -10,7 +10,7 @@
   "dependencies": {
     "@mdx-js/mdx": "1.5.5",
     "@mdx-js/react": "1.5.5",
-    "clsx": "1.1.0",
+    "clsx": "1.1.1",
     "gatsby": "2.19.7",
     "gatsby-image": "2.2.39",
     "gatsby-plugin-manifest": "2.2.39",
