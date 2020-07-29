@@ -8,8 +8,8 @@
     "Mats Schjølberg <matsasc@cyb.no>"
   ],
   "dependencies": {
-    "@mdx-js/mdx": "1.6.14",
-    "@mdx-js/react": "1.6.14",
+    "@mdx-js/mdx": "1.6.16",
+    "@mdx-js/react": "1.6.16",
     "clsx": "1.1.1",
     "gatsby": "2.24.14",
     "gatsby-image": "2.4.14",
