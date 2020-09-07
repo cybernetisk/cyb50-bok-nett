@@ -44,7 +44,7 @@
     "eslint-plugin-react": "7.20.6",
     "gatsby-plugin-typescript": "2.4.18",
     "gatsby-transformer-remark": "2.8.32",
-    "husky": "4.2.5",
+    "husky": "4.3.0",
     "jest": "26.4.2",
     "lint-staged": "10.3.0",
     "node-sass": "4.14.1",
