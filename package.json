@@ -41,7 +41,7 @@
     "@types/recharts": "1.8.16",
     "@typescript-eslint/parser": "4.3.0",
     "eslint": "7.10.0",
-    "eslint-plugin-react": "7.21.2",
+    "eslint-plugin-react": "7.21.3",
     "gatsby-plugin-typescript": "2.4.21",
     "gatsby-transformer-remark": "2.8.37",
     "husky": "4.3.0",
