@@ -40,7 +40,7 @@
     "@types/react-helmet": "6.1.0",
     "@types/recharts": "1.8.17",
     "@typescript-eslint/parser": "4.9.0",
-    "eslint": "7.14.0",
+    "eslint": "7.15.0",
     "eslint-plugin-react": "7.21.5",
     "gatsby-plugin-typescript": "2.8.0",
     "gatsby-transformer-remark": "2.12.0",
