@@ -45,7 +45,7 @@
     "gatsby-plugin-typescript": "4.6.0",
     "gatsby-transformer-remark": "5.6.0",
     "husky": "7.0.4",
-    "jest": "27.5.0",
+    "jest": "27.5.1",
     "lint-staged": "12.3.3",
     "node-sass": "6.0.1",
     "ts-jest": "27.1.3",
