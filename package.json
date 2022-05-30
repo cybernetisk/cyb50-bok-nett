@@ -39,7 +39,7 @@
     "@types/react-dom": "17.0.17",
     "@types/react-helmet": "6.1.5",
     "@types/recharts": "1.8.23",
-    "@typescript-eslint/parser": "5.26.0",
+    "@typescript-eslint/parser": "5.27.0",
     "eslint": "8.16.0",
     "eslint-plugin-react": "7.30.0",
     "gatsby-plugin-typescript": "4.15.0",
