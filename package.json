@@ -19,7 +19,7 @@
     "gatsby-plugin-page-creator": "4.22.0",
     "gatsby-plugin-react-helmet": "5.22.0",
     "gatsby-plugin-sass": "5.22.0",
-    "gatsby-plugin-sharp": "4.22.0",
+    "gatsby-plugin-sharp": "4.23.0",
     "gatsby-source-filesystem": "4.22.0",
     "gatsby-transformer-csv": "4.22.0",
     "gatsby-transformer-mdx": "1.2.1",
