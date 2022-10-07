@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "breakpoints";
 @import "colors";
 @import "typography";
@@ -28,23 +30,23 @@ h6 {
 }
 
 h1 {
-  font-size: 44 / $font-size-default * 1rem;
+  font-size: math.div(44, $font-size-default) * 1rem;
   @media all and (min-width: $breakpoint-md * 1em) {
-    font-size: 50 / $font-size-default * 1rem;
+    font-size: math.div(50, $font-size-default) * 1rem;
   }
 }
 
 h2 {
-  font-size: 33 / $font-size-default * 1rem;
+  font-size: math.div(33, $font-size-default) * 1rem;
   @media all and (min-width: $breakpoint-md * 1em) {
-    font-size: 36 / $font-size-default * 1rem;
+    font-size: math.div(36, $font-size-default) * 1rem;
   }
 }
 
 h3 {
-  font-size: 28 / $font-size-default * 1rem;
+  font-size: math.div(28, $font-size-default) * 1rem;
   @media all and (min-width: $breakpoint-md * 1em) {
-    font-size: 30 / $font-size-default * 1rem;
+    font-size: math.div(30, $font-size-default) * 1rem;
   }
 }
 
@@ -53,7 +55,7 @@ p {
 }
 
 blockquote {
-  margin: 1rem 40rem / $font-size-default;
+  margin: 1rem math.div(40rem, $font-size-default);
 }
 
 dl {

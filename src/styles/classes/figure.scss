@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../breakpoints";
 @import "../colors";
 @import "../typography";
@@ -20,7 +22,7 @@
 
   @media all and (min-width: $breakpoint-sm * 1em) {
     &:not(&--position) {
-      margin: 1rem 40rem / $font-size-default;
+      margin: 1rem math.div(40rem, $font-size-default);
     }
 
     &--position {
