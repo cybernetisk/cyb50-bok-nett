@@ -12,6 +12,7 @@ import Figure from "../../components/figure"
 import Figcaption from "../../components/figcaption"
 import Chart from "../../components/chart"
 import Table from "../../components/table"
+import ChapterLayout from "../../components/chapter-layout"
 
 Da vi satte oss fore å lage denne boken ble jeg spurt om vi kunne lage en oversikt over hvordan kvinneandelen har 
 utviklet seg på Ifi, og blåøyd og naiv som jeg var tenkte jeg «Det hadde vært kjempeinteressert, selvfølgelig skal 
@@ -64,3 +65,7 @@ rapporteringsfristen.
 [^2]:[Statistikk om høyere utdanning](https://dbh.nsd.uib.no/statistikk/)
 [^3]:[Statistikk, søker- og opptakstall](https://www.samordnaopptak.no/info/om/sokertall/)
 [^4]:[Studiestatistikk ved UiO](https://www.uio.no/for-ansatte/arbeidsstotte/sta/fs/statistikk/)
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

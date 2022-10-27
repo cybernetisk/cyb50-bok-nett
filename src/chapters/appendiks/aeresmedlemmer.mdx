@@ -7,6 +7,7 @@ next: /appendiks/domener
 
 import { graphql } from 'gatsby'
 import HonoraryMembers from "../../components/honorary-members"
+import ChapterLayout from "../../components/chapter-layout"
 
 Liste over personer som har fått CYBs æresmedlemskap.
 
@@ -24,3 +25,7 @@ export const honoryMembersQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

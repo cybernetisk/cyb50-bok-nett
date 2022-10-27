@@ -7,6 +7,8 @@ previous: /historie/cybs-emblem
 next: /historie/cyb-tidlig-historie
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 ## Røttene
 
 Datafaget hadde sin spede begynnelse på første halvdel av 50-tallet. Det var lenge en  aktivitet for spesielt 
@@ -160,3 +162,7 @@ var en meget framsynt plan. I dag har denne nemlig fått alminnelig oppslutning,
   [Institutt for informatikk (UiO) på Wikipedia](https://no.wikipedia.org/wiki/Institutt_for_informatikk_(UiO))).
 [^4]:I følge utredningen var dette i tråd med hva som var vanlig internasjonalt, særlig i Europa.
 [^5]:_Datahistorien ved Universitetet i Oslo: Fra begynnelsen til ut i syttiårene._ (1996)
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

@@ -9,6 +9,8 @@ previous: /studentliv/fadderstyret
 next: /studentliv/kvinneandelen
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Som student på Ifi opparbeider man seg en kompetanse som er meget ettertraktet i arbeidslivet. Dette hadde man 
 skjønt mens dagen@ifi utviklet seg til å bli en profesjonell og tradisjonell bedriftsdag, og når man ville 
 starte Navet i 2006 skjønte man også at det ville være fornuftig med en mekanisme som kunne fordele pengene 
@@ -47,3 +49,7 @@ styrke studiemiljøet og sørge for videre god grobunn for engasjement og gode i
 [^7]:Linjeforening for Språkteknologi
 [^8]:Linjeforening for Programmering og Systemarkitektur (samt Programmering og Nettverk)
 [^9]:Foreningen bak magasinet Output
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

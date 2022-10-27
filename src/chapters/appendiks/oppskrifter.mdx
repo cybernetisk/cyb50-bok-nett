@@ -8,6 +8,7 @@ next: /appendiks/drinker
 import { graphql } from 'gatsby'
 import Figure from "../../components/figure"
 import Image from "../../components/image"
+import ChapterLayout from "../../components/chapter-layout"
 
 Etter ønske fra aktive i CYB har vi tatt med denne delen om oppskrifter.
 
@@ -55,4 +56,8 @@ export const imagesQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}
 

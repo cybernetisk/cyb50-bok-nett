@@ -12,6 +12,7 @@ import { graphql } from 'gatsby'
 import Figure from "../../components/figure"
 import Figcaption from "../../components/figcaption"
 import Image from "../../components/image"
+import ChapterLayout from "../../components/chapter-layout"
 
 Til de som husker student- og foreningsmiljøet ved instituttet før vi flyttet inn i Ole-Johan Dahls hus, så kan man 
 ikke annet enn å se tilbake på et høyst begivenhetsrikt tiår. Plutselig var alle instituttets studenter samlet på 
@@ -107,3 +108,7 @@ export const imagesQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

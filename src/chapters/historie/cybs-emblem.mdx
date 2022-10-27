@@ -13,6 +13,7 @@ import Figure from "../../components/figure"
 import Figcaption from "../../components/figcaption"
 import Image from "../../components/image"
 import MathJax from "react-mathjax"
+import ChapterLayout from "../../components/chapter-layout"
 
 _Red.anm.: Denne teksten ble skrevet i anledning CYB sin 25-års feiring. Den er skrevet av Rolf Bjerknes, en person av 
 stor betydning for CYB, og vi følte denne teksten var viktig å få med i boken._
@@ -144,3 +145,7 @@ export const imagesQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

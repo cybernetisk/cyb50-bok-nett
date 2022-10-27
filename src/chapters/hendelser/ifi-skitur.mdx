@@ -8,6 +8,8 @@ previous: /hendelser/whisky-seminar
 next: /hendelser/ifi-galla
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Tradisjonen med skitur for studentene på Ifi startet i 2006, da med ProsIT i regien. ProsIT var interesseforeningen 
 for profesjonsstudentene og en viktig del av oppgaven deres var å skape sosiale tilbud for sine studenter. 
 Hemsedal-turen, som det het da, var et av årets høydepunkter. Turene var hadde høy stemning med rundt 48 studenter 
@@ -60,3 +62,7 @@ på flere turer håper jeg det blir en suksess, og at studentene fortsetter å s
 medstudenter, både med tanke på det sportslige og det sosiale!
 
 [^1]:Med andre ord har ikke innholdet i skituren forandret seg nevneverdig
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

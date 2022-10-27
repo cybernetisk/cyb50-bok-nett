@@ -7,6 +7,8 @@ previous: /historie/ifi-2
 next: /historie/cyb-i-nyere-tid
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 «Kan du fortelle litt om arbeidet som måtte til for å få Escape til å bli en realitet?»
 
 Jeg ble stilt dette spørsmålet i anledning jubileum, og svaret kan oppsummeres ganske kort: møter. Massevis av 
@@ -183,3 +185,7 @@ bare en hyggelig hilsen.
 skjenking for første gang. De hjemmelagde drinkene våre var også svært populære, og det ryktes at Lollipop 
 vant en pris for beste drink, men etter flere timers søkning i egen e-post kan jeg ikke finne beviser så 
 det får bli med myten.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

@@ -9,6 +9,7 @@ import { graphql } from 'gatsby'
 import Figure from "../components/figure";
 import Figcaption from "../components/figcaption";
 import Image from "../components/image";
+import ChapterLayout from "../components/chapter-layout";
 
 <Figure position="end">
   <Image src={props.data.personImage} />
@@ -73,7 +74,7 @@ Silje Merethe Dahl, Siri A.M. Jensen, Siw E. Møller-Pettersen, Steinar Kjærnsr
 Thomas Ferris Nicolaisen, Tor Dokken og Vibeke Stoltenberg.
 
 [^1]:Strengt talt, forhåpentligvis velger å støtte boken. Innen boken er i trykk har ikke FU hatt tid til å formelt
-  bestemme å gi støtten.
+bestemme å gi støtten.
 
 export const profileImageQuery = graphql`
   query {
@@ -86,3 +87,7 @@ export const profileImageQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

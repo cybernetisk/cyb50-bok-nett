@@ -8,6 +8,8 @@ previous: /studentliv
 next: /studentliv/dagen
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 <p>25. oktober 1976 holdt for første gang CYB og Fagkritisk Gruppe (FKG) ved databehandling ved Matematisk institutt 
 felles styremøte. På møtet ble det bestemt at man skulle skaffe representanter til det kommende instituttrådet, 
 samt at man skulle opprette et fagutvalg på informatikk. Til begge organene ble det bestemt at CYB og FKG skulle 
@@ -38,3 +40,7 @@ Vi bidrar fortsatt ved behov.
 Fagutvalget har spilt en viktig rolle for studentene på Ifi siden instituttet ble opprettet. For at vi skal gjøre 
 jobben vår best mulig er vi avhengig av tilbakemeldinger fra studentene. Så ta kontakt med oss og svar på 
 kursevalueringene så skal vi sammen sørge for at det faglige miljøet på Ifi kan bli det beste det kan bli.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

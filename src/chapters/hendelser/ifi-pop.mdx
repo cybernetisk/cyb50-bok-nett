@@ -8,6 +8,8 @@ previous: /hendelser/1988-cyb-i-usa
 next: /hendelser/whisky-seminar
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Et viktig arbeid for CYB på 2000-tallet var forskjellige aktiviteter for å bygge opp studentmiljøet. Da man la ned 
 vervet bedriftsansvarlig i 2002 var det som følge av en nedgang i interessen blant bedrifter om å bruke penger på 
 promotering, siden markedet slet etter dotcom-boblen. Man hadde klarte å få i gang dagen@ifi i 2003, men dette var 
@@ -41,3 +43,7 @@ studentkjelleren[^1].
 [^1]:Om ikke undertegnede husker helt feil, fikk man til to foredrag med hhv 
   Dag Langmyhr, som snakket inspirerende om de underliggende teknologiene til fonter, og Roger Antonsen, 
   som snakket om fascinerende mønstre og magiske formler i matematikken
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

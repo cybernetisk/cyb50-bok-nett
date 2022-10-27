@@ -9,6 +9,8 @@ previous: /studentliv/navet
 next: /studentliv/foreningsfesten
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Hennes Majestet Keiserpingvinen den Fornemmes orden, eller Ifi-ordenen som den er bedre kjent som, er en 
 studenter-ridderorden ved Ifi som har som formål å hedre personer som har gjort en beundringsverdig innsats for 
 studentmiljøet på Ifi. Dette er som regel studenter, men inkluderer også ansatte og andre som har gjort mye for 
@@ -73,3 +75,7 @@ kan få. Sjekk gjerne ut ordenen.ifi.uio.no, hvor man også kan nominere persone
 
 [^1]:Det jobbes fortsatt med dette, målet er at man på sikt burde ha en 
   representasjon som er på linje med sammensetningen i studentmiljøet
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

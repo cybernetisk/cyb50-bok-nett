@@ -5,6 +5,8 @@ previous: /appendiks/oppskrifter
 next: /appendiks/rettskriving
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Etter ønske fra aktive har vi tatt med et kapittel om drinker som gjerne kan blandes.
 
 ## Lollipop
@@ -63,3 +65,7 @@ Miks med is i en shaker, sil i et martiniglass, og hell i grenadin.
 * 2cl sourmix
 
 Toppes med sprite i et pjolterglass med is.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

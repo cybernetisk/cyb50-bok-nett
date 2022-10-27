@@ -9,6 +9,8 @@ previous: /historie/cyb-i-nyere-tid
 next: /hendelser/1988-cyb-i-usa
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Som nevnt i [kapittelet om CYBs tidlige historie](../historie/cyb-tidlig-historie) var turer og ekskursjoner en 
 viktig tradisjon i CYBs tidligere historie. Vi har vært så heldig å få en turberetning av to alumni som var 
 med på turen til USA i 1988, noe som gir mange herlige innsikter fra den tiden[^1].
@@ -20,3 +22,7 @@ størrelse som ikke har vært på Ole-Johan Dahls hus siden, og kanskje den teks
 eller fremtidige aktive.
 
 [^1]:Ikke minst herlige bilder fra 80-talls stilen
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

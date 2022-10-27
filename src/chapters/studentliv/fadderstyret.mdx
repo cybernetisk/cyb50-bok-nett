@@ -8,6 +8,8 @@ previous: /studentliv/foreningsfesten
 next: /studentliv/fordelingsutvalget
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Fadderordningen på Ifi har alltid vært nært tilknyttet studiemiljøet og ildsjelene som «var med på alt». Gjennom 
 tidene har fadderordningen vært overrakt flere grupperinger; dem som er nært knyttet en eller flere foreninger, 
 men også dem som ikke er tilknyttet noen spesifikke foreninger. Det var også tendenser til mer oppsplittede 
@@ -36,3 +38,7 @@ amarbeider Fadderstyret for å skape en langvarig trivsel som kan bidra til et v
 føler seg komfortable og velkomne.
 
 [^1]:Kjærlig kalt P2P-festen av enkelte informatikere
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

@@ -7,6 +7,8 @@ previous: /hendelser/ifi-pop
 next: /hendelser/ifi-skitur
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Et whisky-seminar er en whisky-smaking ikke ulikt en vin- eller ølsmaking. CYB har arrangert et seminar hvert 
 eneste semester siden oppstart våren 2009, og det har dermed blitt den eldste tradisjonen man fortsatt 
 gjennomfører foruten generalforsamling. Samtlige seminarer har blitt holdt av skotten Chris Maile.
@@ -26,3 +28,7 @@ som fersk kjellerpubforening valgte _Glenmorangie The Original_ til sin represen
 
 Chris ble utnevnt til æresmedlem av CYBs generalforsamling høsten 2013, en utmerkelse han passende nok fikk 
 overrukket på whisky-seminaret våren 2014.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

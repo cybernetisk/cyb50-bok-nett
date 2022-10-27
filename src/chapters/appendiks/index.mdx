@@ -7,5 +7,11 @@ previous: /personer/henrik-steen
 next: /appendiks/hovedstyrer
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 I denne avsluttende delen av boken har vi tatt med innhold som i en eller annen grad har betydning for CYB, men som 
 ikke passer inn i de øvrige delene av boken.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

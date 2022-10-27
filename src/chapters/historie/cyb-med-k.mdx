@@ -6,6 +6,8 @@ previous: /historie/ifi-1
 next: /historie/fra-dvale-til-kjeller
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Denne teksten er hentet fra CYBs sine gamle nettsider, som presenterte svaret CYB hadde fått etter å ha sendt 
 brev til Norsk språkråd. Innlegget gjengis her til glede for nye lesere.
 
@@ -23,3 +25,7 @@ brev til Norsk språkråd. Innlegget gjengis her til glede for nye lesere.
 > Med hilsen<br />
 > Jan R. Tislevoll<br />
 > Språkrådet
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

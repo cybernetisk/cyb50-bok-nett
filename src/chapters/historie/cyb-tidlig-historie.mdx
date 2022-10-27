@@ -13,6 +13,7 @@ import { graphql } from 'gatsby'
 import Figure from "../../components/figure"
 import Figcaption from "../../components/figcaption"
 import Image from "../../components/image"
+import ChapterLayout from "../../components/chapter-layout"
 
 _Red.anm.: Denne teksten er hovedsakelig basert på bidrag man har fått fra alumni, tekster i CYBs 25-års 
 jubileumshefte og det man ellers har funnet i gamle arkiv. Det er noen hull i historien her og der, mye har rett og 
@@ -345,3 +346,7 @@ export const imagesQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

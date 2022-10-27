@@ -7,6 +7,7 @@ next: /appendiks/oppskrifter
 
 import { graphql } from 'gatsby'
 import Domains from "../../components/domains"
+import ChapterLayout from "../../components/chapter-layout"
 
 Liste over domener som CYB eier.
 
@@ -24,3 +25,7 @@ export const honoryMembersQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

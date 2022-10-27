@@ -8,6 +8,8 @@ previous: /historie/cyb-med-k
 next: /historie/ifi-2
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 I perioden 2006-2007 samlet flere nye og eksisterende studentforeninger seg til fellesmøte om fremtiden til 
 Cybernetisk Selskab. Det var et ønske fra det daværende styret, og ledelsen på Ifi, om å få mer fart i aktiviteten 
 til foreningen, for å unngå oppløsning og påfølgende gravøl, som selvsagt ville blitt holdt for å sikre en verdig 
@@ -53,3 +55,7 @@ ansvaret for å drive kjelleren. Så, i et siste dytt for å få CYB ut av dvale
 Kjellermogul og sørget, sammen med sin trofaste gjeng i Kjellerstyret, for at nødvendige avtaler ble inngått og 
 personell (les: frivillige studenter) rekruttert og ivaretatt, og drømmen om en egen studentkjeller nærmet seg 
 en realitet!
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

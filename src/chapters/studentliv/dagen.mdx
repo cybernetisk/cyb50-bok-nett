@@ -7,6 +7,8 @@ previous: /studentliv/fui
 next: /studentliv/navet
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 _Red.anm.: I CYB sitt 42-års jubileumshefte skrev Anna Dahl en veldig god tekst om dagens opprinnelse, og vi har valgt 
 å gjengi denne her til glede for nye lesere. Men vi vil også å vite litt mer om dagen@ifi i nyere, noe Karl H. Totland 
 har vært velvillig til å fortelle i kapitlets andre tekst._
@@ -153,3 +155,7 @@ tilhørighet til foreningen og dermed også skape en større grad av kontinuitet
 Det burde også legges mer vekt på å gi tid og rom nok til deltakere og bedrifter, ettersom det å ha mer enn 50 
 bedrifter i løpet av en dag vil begrense hvor mye oppmerksomhet bedrifter og studenter får fra hverandre. Å spre 
 det utover flere dager — med litt inspirasjon fra itDAGENE i Trondheim — kan være en potensiell løsning.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

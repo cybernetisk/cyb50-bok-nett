@@ -8,6 +8,8 @@ previous: /hendelser/ifi-skitur
 next: /hendelser/uio-200
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 Da Cybernetisk Selskab feiret 42 år var det mange tanker og ønsker som lå i lufta. Året var 2011, Ole-Johan Dahls 
 hus hadde blitt offisielt åpnet, og med det var også åpningen av Escape endelig et faktum. CYB hadde gått fra å 
 være en forening på kanten til å legges ned, til å få et enormt fokus på arrangement og ikke minst arbeidet med å 
@@ -52,3 +54,7 @@ ihvertfall til halv to, når lokalet må stenge. Men innen da er det gjerne noen
 hvor mange kan få inn i en stakkars studentbolig, og moroa fortsetter dit. Hvordan disse hyblene klarer å skaffe 
 til veie drikke til sine tørste gjester forblir et mysterium, men det ryktes at god koordinering (og iblant 
 ukoordinering) er trikset.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

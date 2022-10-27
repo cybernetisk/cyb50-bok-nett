@@ -8,6 +8,7 @@ next: /appendiks/kjellerstyrer
 
 import { graphql } from 'gatsby'
 import Boards from "../../components/boards"
+import ChapterLayout from "../../components/chapter-layout"
 
 <Boards data={props.data.allHovedstyrerCsv} />
 
@@ -25,3 +26,7 @@ export const associationsQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

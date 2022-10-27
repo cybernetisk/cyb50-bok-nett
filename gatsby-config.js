@@ -28,15 +28,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-typescript`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        defaultLayouts: {
-          chapters: require.resolve('./src/components/chapters-layout.tsx'),
-          default: require.resolve('./src/components/layout.tsx'),
-        }
-      }
-    },
+    `gatsby-plugin-mdx`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

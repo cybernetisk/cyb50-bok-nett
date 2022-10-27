@@ -10,6 +10,7 @@ next: /personer
 
 import { graphql } from 'gatsby'
 import Associations from "../../components/associations"
+import ChapterLayout from "../../components/chapter-layout"
 
 Det er etterhvert mange foreninger som er eller har vært aktive på Ifi eller har en sterk tilknytning til 
 instituttet. Dette er et forsøk på å liste opp dem man vet om[^1].
@@ -35,3 +36,7 @@ export const associationsQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

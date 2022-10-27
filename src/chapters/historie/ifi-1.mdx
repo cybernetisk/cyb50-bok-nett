@@ -12,6 +12,7 @@ import { graphql } from 'gatsby'
 import Figure from "../../components/figure"
 import Figcaption from "../../components/figcaption"
 import Image from "../../components/image"
+import ChapterLayout from "../../components/chapter-layout"
 
 <Figure>
   <Image src={props.data.ifi1} />
@@ -86,3 +87,7 @@ export const imagesQuery = graphql`
     }
   }
 `
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

@@ -9,6 +9,8 @@ previous: /hendelser/ifi-galla
 next: /studentliv
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 <p>2. September 2011 var en merkedag for Universitetet i Oslo og Institutt for informatikk. Universitetet feiret 
 sitt 200 års-jubileum og den offisielle åpningen av instituttets nye bygg, Ole-Johan Dahls hus. Det var en dag 
 fylt med fest og glede, med start på fakultetene hvor kransekake og cava ble konsumert, etterfulgt av konsert på 
@@ -109,3 +111,7 @@ og samle inn info til rapport (denne endte opp på 123 sider til sammen, og har 
 ressurs for senere storfester på bygget). Det var mye god stemning, og tydelig at alle var fornøyd med arbeidet 
 som ble lagt ned. Cybernetisk Selskab hadde med det fått vist at de var en studentkjeller-forening verdig, og 
 grunnlaget for videre arbeid som instituttforening var lagt.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

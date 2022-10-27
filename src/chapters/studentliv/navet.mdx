@@ -7,6 +7,8 @@ previous: /studentliv/dagen
 next: /studentliv/ifi-ordenen
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 _Red.anm.: Dette kapitlet består av to tekster, en gjenbrukt tekst fra CYB sitt 42-års jubileumshefte, og en nyere 
 tekst av Carl-Magnus Lein, nåværende leder i Navet._
 
@@ -80,3 +82,7 @@ både fulltid og deltidsstillinger i store og små selskaper, privat og offentli
 Jobben som bedriftskontakt ved Ifi er en jobb vi i Navet er stolt av å kunne gjøre for studentene på Ifi, og vi 
 håper dere fortsetter å komme innom på bedriftspresentasjoner. Det er mange goder ved å komme i kontakt med 
 bedrifter før man er ferdige å studere, og vi anbefaler alle å sjekke ut dem vi er med på å bringe til instituttet.
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}

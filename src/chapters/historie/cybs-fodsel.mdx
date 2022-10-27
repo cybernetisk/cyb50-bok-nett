@@ -7,6 +7,8 @@ previous: /historie
 next: /historie/cybs-emblem
 ---
 
+import ChapterLayout from "../../components/chapter-layout"
+
 _Red.anm.: Denne teksten ble skrevet i anledning CYB sin 25-års feiring. Den gir god innsikt i den første tiden til CYB,
 og vi håper den gir glede også for nye lesere av denne boken._
 
@@ -105,3 +107,7 @@ oppdaget hvilken tid de hadde levd i før i ettertid. «Avstanden» til Paris sk
 naturvitenskapelige fag ikke er gjenstand for like følelsesladde og dyptgripende diskusjoner som samfunns- og 
 filosofifag. Kanskje er dosenturet de 'vant' også et resultat av tiden, kanskje var det lettere å bli hørt som student 
 etter opptøyene i Paris?
+
+export default function Layout (props) {
+  return <ChapterLayout {...props} />
+}
