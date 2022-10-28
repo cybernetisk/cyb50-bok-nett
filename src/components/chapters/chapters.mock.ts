@@ -1,16 +1,16 @@
-import { Edge } from './chapters'
+import { Edge } from "./chapters";
 
 export const edges: Edge[] = [
-  generateItem('3', null, 100),
-  generateItem('4', 'II', 150),
-  generateItem('2', 'I', 3),
-  generateItem('5', null, 1000),
-  generateItem('1', null, 0)
-]
+  generateItem("3", null, 100),
+  generateItem("4", "II", 150),
+  generateItem("2", "I", 3),
+  generateItem("5", null, 1000),
+  generateItem("1", null, 0)
+];
 
-function generateItem (title: string, partName: string | null, order: number): Edge {
+function generateItem(title: string, partName: string | null, order: number): Edge {
   return {
-    body: '',
+    body: "",
     frontmatter: {
       chapter: null,
       next: null,
@@ -22,7 +22,7 @@ function generateItem (title: string, partName: string | null, order: number): E
       title,
     },
     parent: {
-      relativePath: ''
+      relativePath: ""
     }
-  }
+  };
 }

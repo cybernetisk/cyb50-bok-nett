@@ -19,8 +19,6 @@ interface Frontmatter {
   title: string;
 }
 
-type LinkProps = JSX.IntrinsicElements["link"]
-
 interface Props {
   children: ReactNode;
   pageContext: {
