@@ -5,6 +5,7 @@ import Header from "./header";
 import License from "./license";
 import Helmet from "react-helmet";
 import { TableOfContentsData } from "./table-of-contents";
+import SEO from './seo';
 
 interface Frontmatter {
   author?: string;
@@ -39,8 +40,10 @@ export default function ChapterLayout({ children, pageContext }: Props) {
   const data = query();
   const chapters = Object.values(data.allMdx.edges).map(edge => edge.node);
   const chapterIndex = chapters.findIndex(chapter => chapter.frontmatter.order === pageContext.frontmatter.order);
+  const title = getTitle(pageContext.frontmatter)
   return (
     <>
+      <SEO title={title}/>
       <Helmet link={[
         { rel: "prev", href: pageContext.frontmatter.previous || "/" },
         { rel: "next", href: pageContext.frontmatter.next || "/" }
@@ -112,6 +115,12 @@ query SiteTitleQuery {
   }
 }
   `);
+}
+
+function getTitle({ chapter, partName, partNo, title }: Frontmatter): string {
+  const partBit = partName ? `Del ${partNo}: ${partName} - ` : "";
+  const chapterBit = chapter ? `Kapittel ${chapter} - ` : "";
+  return `${partBit}${chapterBit}${title}`;
 }
 
 function TitleBit(title: string) {
