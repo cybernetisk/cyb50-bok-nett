@@ -44,8 +44,8 @@ export default function ChapterLayout({ children, pageContext }: Props) {
       <Helmet link={[
         { rel: "prev", href: pageContext.frontmatter.previous || "/" },
         { rel: "next", href: pageContext.frontmatter.next || "/" }
-      ]} />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      ]}/>
+      <Header siteTitle={data.site.siteMetadata.title}/>
       <Layout className="chapter">
         <h1>
           {pageContext.frontmatter.partName && PartBit(pageContext.frontmatter)}
@@ -58,23 +58,23 @@ export default function ChapterLayout({ children, pageContext }: Props) {
           {pageContext.frontmatter.previous && (
             <a className="chapter__nav-link chapter__nav-link--previous" href={pageContext.frontmatter.previous}>
               <span className="chapter__nav-link-description">Forrige side</span>
-              <br />
+              <br/>
               <span className="chapter__nav-link-name"
-                dangerouslySetInnerHTML={{ __html: chapters[chapterIndex - 1].frontmatter.title }} />
+                    dangerouslySetInnerHTML={{ __html: chapters[chapterIndex - 1].frontmatter.title }}/>
             </a>
           )}
           {pageContext.frontmatter.next && (
             <a className="chapter__nav-link chapter__nav-link--next" href={pageContext.frontmatter.next}>
               <span className="chapter__nav-link-description">Neste side</span>
-              <br />
+              <br/>
               <span className="chapter__nav-link-name"
-                dangerouslySetInnerHTML={{ __html: chapters[chapterIndex + 1].frontmatter.title }} />
+                    dangerouslySetInnerHTML={{ __html: chapters[chapterIndex + 1].frontmatter.title }}/>
             </a>
           )}
         </nav>
       </Layout>
       {pageContext.frontmatter.license && <footer className="layout layout--footer footer">
-        <License license={pageContext.frontmatter.license} />
+        <License license={pageContext.frontmatter.license}/>
       </footer>}
     </>
   );
@@ -82,52 +82,52 @@ export default function ChapterLayout({ children, pageContext }: Props) {
 
 function query() {
   return useStaticQuery<Data>(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
+query SiteTitleQuery {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+  allMdx(sort: {frontmatter: {order: ASC}}) {
+    edges {
+      node {
+        body
+        frontmatter {
+          chapter
+          next
+          order
+          part
+          partName
+          previous
+          short
           title
         }
-      }
-      allMdx(sort: {order: ASC, fields: frontmatter___order}) {
-        edges {
-          node {
-            body
-            frontmatter {
-              chapter
-              next
-              order
-              part
-              partName
-              previous
-              short
-              title
-            }
-            parent {
-              ... on File {
-                relativePath
-              }
-            }
+        parent {
+          ... on File {
+            relativePath
           }
         }
       }
     }
+  }
+}
   `);
 }
 
 function TitleBit(title: string) {
-  return <span dangerouslySetInnerHTML={({ __html: title })} />;
+  return <span dangerouslySetInnerHTML={({ __html: title })}/>;
 }
 
 function ChapterBit(chapter: number): ReactNode {
   return <>
     <span>Kapittel {chapter}</span>
-    <br />
+    <br/>
   </>;
 }
 
 function PartBit({ part, partNo, partName }: Frontmatter): ReactNode {
   return <>
-    Del <span aria-hidden={true}>{part}</span><span className="sr sr--hidden">{partNo}</span><br />
+    Del <span aria-hidden={true}>{part}</span><span className="sr sr--hidden">{partNo}</span><br/>
     {partName}
   </>;
 }

@@ -42,9 +42,7 @@ export const profileImageQuery = graphql`
   query {
     personImage: file(relativePath: { eq: "henrik-steen/profil.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

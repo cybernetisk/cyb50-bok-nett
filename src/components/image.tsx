@@ -1,5 +1,6 @@
 import React from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImageProps } from 'gatsby-plugin-image/dist/src/components/gatsby-image.browser';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -12,12 +13,12 @@ import Img from "gatsby-image";
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-interface Props {
+interface Props extends GatsbyImageProps {
   src: any
 }
 
-const Image = ({ src }: Props) => {
-  return <Img fluid={src.childImageSharp.fluid} />
+const Image = ({ src, ...props }: Props) => {
+  return <GatsbyImage {...props} image={src.childImageSharp.gatsbyImageData}/>
 };
 
 export default Image;

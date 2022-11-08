@@ -297,51 +297,37 @@ export const imagesQuery = graphql`
   query {
     cybUka75: file(relativePath: { eq: "cyb-tidlig-historie/cyb_uka75.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     buss: file(relativePath: { eq: "cyb-tidlig-historie/buss.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     gammelMaskin: file(relativePath: { eq: "cyb-tidlig-historie/gammel-maskin.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     turTilUSA: file(relativePath: { eq: "tur-til-usa-1988/IMG_3849.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     midlertidigLogo: file(relativePath: { eq: "cyb-tidlig-historie/cyb-midlertidig-logo.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     brev: file(relativePath: { eq: "cyb-tidlig-historie/brev.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     cybFestRF: file(relativePath: { eq: "cyb-tidlig-historie/cyb-fest-rf.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

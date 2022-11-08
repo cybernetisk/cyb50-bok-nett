@@ -73,16 +73,12 @@ export const imagesQuery = graphql`
   query {
     ifi1: file(relativePath: { eq: "ifi1/ifi1.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     piano: file(relativePath: { eq: "ifi1/piano-ojd-og-donald-knuth.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

@@ -49,9 +49,7 @@ export const imagesQuery = graphql`
   query {
     akkeloff: file(relativePath: { eq: "oppskrifter/akkeloff.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

@@ -5,7 +5,6 @@ module.exports = {
     author: `@megoth`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,15 +32,15 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'chapters',
-        path: `${__dirname}/src/chapters`,
-      },
+        path: `${__dirname}/src/chapters`
+      }
     },
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         name: 'chapters',
-        path: `${__dirname}/src/chapters`,
-      },
+        path: `${__dirname}/src/chapters`
+      }
     },
     'gatsby-plugin-sass',
     {
@@ -56,12 +55,12 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data/`,
-      },
+        path: `${__dirname}/src/data/`
+      }
     },
     `gatsby-transformer-csv`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`
   ]
 }

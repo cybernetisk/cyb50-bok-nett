@@ -12,20 +12,20 @@ import { graphql } from 'gatsby'
 import Associations from "../../components/associations"
 import ChapterLayout from "../../components/chapter-layout"
 
-Det er etterhvert mange foreninger som er eller har vært aktive på Ifi eller har en sterk tilknytning til 
+Det er etterhvert mange foreninger som er eller har vært aktive på Ifi eller har en sterk tilknytning til
 instituttet. Dette er et forsøk på å liste opp dem man vet om[^1].
 
-<Associations active={true} data={props.data.allForeningerCsv} />
+<Associations active={true} data={props.data.allForeningerCsv}/>
 
 ## Ikke lenger aktive
 
-<Associations active={false} data={props.data.allForeningerCsv} />
+<Associations active={false} data={props.data.allForeningerCsv}/>
 
 [^1]:Hentet fra [Ifi-ordenen sine sider](http://ordenen.ifi.uio.no/association/) og med hjelp fra aktive i CYB
 
 export const associationsQuery = graphql`
   query {
-    allForeningerCsv(sort: {fields: name, order: ASC}) {
+    allForeningerCsv(sort: {name: ASC}) {
       edges {
         node {
           active
@@ -37,6 +37,6 @@ export const associationsQuery = graphql`
   }
 `
 
-export default function Layout (props) {
+export default function Layout(props) {
   return <ChapterLayout {...props} />
 }

@@ -103,23 +103,17 @@ export const profileImageQuery = graphql`
   query {
     personImage: file(relativePath: { eq: "ole-johan-dahl/profil.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     largerPersonImage: file(relativePath: { eq: "ole-johan-dahl/Ole-Johan.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-         ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     ieee: file(relativePath: { eq: "ole-johan-dahl/ieee.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-         ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }
