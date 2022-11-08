@@ -242,44 +242,32 @@ export const imagesQuery = graphql`
   query {
     resepsjon: file(relativePath: { eq: "tur-til-usa-1988/IMG_3846.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     workstation: file(relativePath: { eq: "tur-til-usa-1988/apollo_workstation.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     apollo: file(relativePath: { eq: "tur-til-usa-1988/IMG_3790.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     cm2: file(relativePath: { eq: "tur-til-usa-1988/cm2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     sun: file(relativePath: { eq: "tur-til-usa-1988/IMG_3847.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     lincoln: file(relativePath: { eq: "tur-til-usa-1988/IMG_3848.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

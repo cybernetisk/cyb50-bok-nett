@@ -28,13 +28,13 @@ interface Props {
   data: Data
 }
 
-export default function Index ({ data }: Props) {
+export default function Index({ data }: Props) {
   const changes = Object.values(data.allMarkdownRemark.edges).map(edge => edge.node)
   return (
     <Layout className="index">
       <SEO title={data.site.siteMetadata.title}/>
       <Helmet link={[
-        { rel: 'next', href: '/forord'}
+        { rel: 'next', href: '/forord' }
       ]}/>
       <header className="index__header">
         <img className="index__header-logo" src="/cyb50.svg" alt="CYB50 logo"/>
@@ -67,7 +67,7 @@ query TableOfContentsQuery {
       title
     }
   }
-  allMdx(sort: {order: ASC, fields: frontmatter___order}) {
+  allMdx(sort: {frontmatter: {order: ASC}}) {
     edges {
       node {
         body
@@ -89,7 +89,7 @@ query TableOfContentsQuery {
       }
     }
   }
-  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
     edges {
       node {
         frontmatter {

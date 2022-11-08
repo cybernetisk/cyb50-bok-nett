@@ -141,37 +141,27 @@ export const imagesQuery = graphql`
   query {
     hoppeslott: file(relativePath: { eq: "ifi2/hoppeslott.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     ifi2: file(relativePath: { eq: "ifi2/ifi2.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     appell: file(relativePath: { eq: "ifi2/knut-yrvin-demonstrasjon.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     demonstrasjon: file(relativePath: { eq: "ifi2/ifi2-demonstrasjon.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     aapning: file(relativePath: { eq: "ifi2/ifi2-offisiell-aapning.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

@@ -101,9 +101,7 @@ export const imagesQuery = graphql`
   query {
     group: file(relativePath: { eq: "foreningsfest/forste-fellesbildet.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

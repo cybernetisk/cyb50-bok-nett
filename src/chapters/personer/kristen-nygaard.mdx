@@ -124,9 +124,7 @@ export const profileImageQuery = graphql`
   query {
     personImage: file(relativePath: { eq: "kristen-nygaard/profil.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

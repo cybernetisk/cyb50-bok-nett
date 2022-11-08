@@ -34,7 +34,7 @@ hos IBM. Karl Petter Fischer er cand.real. 1972, Kjemi hovedfag, og er nå bosat
 andre innsendte forslag bevart i Selskabets arkiver, og alle fem er gjengitt nedenfor i sin opprinnelige form.
 
 <Figure>
-  <Image src={props.data.konkurranseForslag} />
+  <Image src={props.data.konkurranseForslag}/>
   <Figcaption>De innsendte forslag til emblemkonkurransen</Figcaption>
 </Figure>
 
@@ -49,7 +49,7 @@ Disse tre vil bli nærmere beskrevet i det følgende.
 ## Superellipsen
 
 <Figure position={"end"}>
-  <Image src={props.data.formel} />
+  <Image src={props.data.formel}/>
   <Figcaption>Formel for superellipsen</Figcaption>
 </Figure>
 
@@ -86,7 +86,7 @@ fordi Kalman-filteret under stasjonære forhold er ekvivalent med et Wiener-filt
 ## Sentrifugalregulatoren
 
 <Figure position="end">
-  <Image src={props.data.sentrifugalVindmolle} />
+  <Image src={props.data.sentrifugalVindmolle}/>
   <Figcaption>Her en vindmølle som reguleres av en sentrifugalregulator</Figcaption>
 </Figure>
 
@@ -104,7 +104,7 @@ Maxwell (1831- 1879) med den klassiske publikasjonen av Maxwell, J. C.: _On gove
 (London), 16, 1868.
 
 <Figure>
-  <Image src={props.data.sentrifugalDampmaskin} />
+  <Image src={props.data.sentrifugalDampmaskin}/>
   <Figcaption>Her regulerer sentrifugalregulatoren en dampmaskin</Figcaption>
 </Figure>
 
@@ -112,50 +112,40 @@ Som man skjønner ligger det megen omtanke bak emblemet til Cybernetisk Selskab.
 avslutte med et Gruk:
 
 <Figure>
-  <Image src={props.data.gruk} />
+  <Image src={props.data.gruk}/>
   <Figcaption>Gruket slik det ble presentert i 25-års jubileumshefte</Figcaption>
 </Figure>
 
 export const imagesQuery = graphql`
   query {
     konkurranseForslag: file(relativePath: {eq: "emblem/konkurranse-forslag.png"}) {
-    childImageSharp {
-    fluid(maxWidth: 300) {
-    ...GatsbyImageSharpFluid
-  }
-  }
-  }
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
     sentrifugalVindmolle: file(relativePath: {eq: "emblem/sentrifugal-vindmolle.png"}) {
-    childImageSharp {
-    fluid(maxWidth: 300) {
-    ...GatsbyImageSharpFluid
-  }
-  }
-  }
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
     sentrifugalDampmaskin: file(relativePath: {eq: "emblem/sentrifugal-dampmaskin.png"}) {
-    childImageSharp {
-    fluid(maxWidth: 300) {
-    ...GatsbyImageSharpFluid
-  }
-  }
-  }
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
     formel: file(relativePath: {eq: "emblem/formel.png"}) {
-    childImageSharp {
-    fluid(maxWidth: 251) {
-    ...GatsbyImageSharpFluid
-  }
-  }
-  }
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
     gruk: file(relativePath: {eq: "emblem/gruk.png"}) {
-    childImageSharp {
-    fluid(maxWidth: 300) {
-    ...GatsbyImageSharpFluid
-  }
-  }
-  }
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
   }
   `
 
-export default function Layout (props) {
+export default function Layout(props) {
   return <ChapterLayout {...props} />
 }
