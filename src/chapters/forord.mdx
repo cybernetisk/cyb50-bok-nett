@@ -8,11 +8,12 @@ next: /historie
 import { graphql } from 'gatsby'
 import Figure from "../components/figure";
 import Figcaption from "../components/figcaption";
+import Footnote from "../components/footnote";
 import Image from "../components/image";
 import ChapterLayout from "../components/chapter-layout";
 
 <Figure position="end">
-  <Image src={props.data.personImage} />
+  <Image src={props.data.personImage}/>
   <Figcaption>Skrevet av Arne Hassel</Figcaption>
 </Figure>
 
@@ -52,8 +53,12 @@ de aller beste å engasjere seg i.
 
 Denne boken er et produkt av en mengde personer, og takk skal rettes der takk er fortjent.
 
-Takk til Fordelingsutvalget som valgte å støtte publikasjonen av boken[^1], takk til dem som har skrevet tekster til
-boka, og takk til dem som har vært med å utforme og korrekturlese boken slik at den blir så god som den kan bli.
+<p>
+  Takk til Fordelingsutvalget som valgte å støtte publikasjonen av boken<Footnote>Strengt talt, forhåpentligvis velger å
+  støtte boken. Innen boken er i trykk har ikke FU hatt tid til å formelt bestemme å gi støtten.</Footnote>, takk til
+  dem som har skrevet tekster til boka, og takk til dem som har vært med å utforme og korrekturlese boken slik at den
+  blir så god som den kan bli.
+</p>
 
 En spesiell takk til alle forfatterne våre som har kommet med bidrag. Narve Trædal har vært et arbeidsjern uten like og
 vi setter utrolig stor pris på hans bidrag til boken. Ellers har følgende personer bidratt med tekster (i alfabetisk
@@ -73,9 +78,6 @@ Kristin Skar, Kurt Nilssen, Mats Astrup Schjølberg, May-Lis Farnes, Nils Petter
 Silje Merethe Dahl, Siri A.M. Jensen, Siw E. Møller-Pettersen, Steinar Kjærnsrød, Steinar Meen, Svein Bøe, Terje Dahl,
 Thomas Ferris Nicolaisen, Tor Dokken og Vibeke Stoltenberg.
 
-[^1]:Strengt talt, forhåpentligvis velger å støtte boken. Innen boken er i trykk har ikke FU hatt tid til å formelt
-bestemme å gi støtten.
-
 export const profileImageQuery = graphql`
   query {
     personImage: file(relativePath: { eq: "preface-introduksjon/arne-hassel.png" }) {
@@ -86,6 +88,6 @@ export const profileImageQuery = graphql`
   }
 `
 
-export default function Layout (props) {
+export default function Layout(props) {
   return <ChapterLayout {...props} />
 }

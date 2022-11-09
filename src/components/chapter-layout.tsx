@@ -6,6 +6,8 @@ import License from "./license";
 import Helmet from "react-helmet";
 import { TableOfContentsData } from "./table-of-contents";
 import SEO from './seo';
+import { addFootnote, FootnotesProvider } from '../contexts/footnotes';
+import FootnoteList from './footnote-list';
 
 interface Frontmatter {
   author?: string;
@@ -41,6 +43,10 @@ export default function ChapterLayout({ children, pageContext }: Props) {
   const chapters = Object.values(data.allMdx.edges).map(edge => edge.node);
   const chapterIndex = chapters.findIndex(chapter => chapter.frontmatter.order === pageContext.frontmatter.order);
   const title = getTitle(pageContext.frontmatter)
+  const footnotes = {
+    footnotes: [],
+    addFootnote
+  }
   return (
     <>
       <SEO title={title}/>
@@ -56,7 +62,10 @@ export default function ChapterLayout({ children, pageContext }: Props) {
           {!pageContext.frontmatter.partName && TitleBit(pageContext.frontmatter.title)}
         </h1>
         {pageContext.frontmatter.author && <p>Skrevet av {pageContext.frontmatter.author}</p>}
-        {children}
+        <FootnotesProvider value={footnotes}>
+          {children}
+          <FootnoteList/>
+        </FootnotesProvider>
         <nav className="chapter__nav">
           {pageContext.frontmatter.previous && (
             <a className="chapter__nav-link chapter__nav-link--previous" href={pageContext.frontmatter.previous}>

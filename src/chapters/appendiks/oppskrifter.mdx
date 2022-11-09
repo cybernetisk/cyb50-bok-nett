@@ -7,6 +7,7 @@ next: /appendiks/drinker
 
 import { graphql } from 'gatsby'
 import Figure from "../../components/figure"
+import Footnote from '../../components/footnote'
 import Image from "../../components/image"
 import ChapterLayout from "../../components/chapter-layout"
 
@@ -14,13 +15,17 @@ Etter ønske fra aktive i CYB har vi tatt med denne delen om oppskrifter.
 
 ## Akkeloff
 
-«Akevittloff», bedre kjent som «akkeloff», er en relativt ny tradisjon i CYB sammenheng. 
+«Akevittloff», bedre kjent som «akkeloff», er en relativt ny tradisjon i CYB sammenheng.
 
-Originalt oppdaget tidlig våren 2015, da Nikolas Papaioannou skulle «akkes inn»[^1] litt ekstra etter å ha blitt 
-valgt til vervet Kjellermogul.
+<p>
+  Originalt oppdaget tidlig våren 2015, da Nikolas Papaioannou skulle «akkes inn»<Footnote>Å ta et shot med akevitt i
+  sammenheng med at man tiltrer et verv. Må ikke forvirres med det å «whiskes ut» som skjer ifb. at man fratrer et verv.
+  Man kan både akkes inn og whiskes ut på samme generalforsamling om man både fratrer og tiltrer et
+  verv.</Footnote> litt ekstra etter å ha blitt valgt til vervet Kjellermogul.
+</p>
 
 <Figure>
-  <Image src={props.data.akkeloff} />
+  <Image src={props.data.akkeloff}/>
 </Figure>
 
 Porsjoner: 1
@@ -41,10 +46,6 @@ Porsjoner: 1
 
 Inntas hel, og i én munnfull.
 
-[^1]:Å ta et shot med akevitt i sammenheng med at man tiltrer et verv. Må ikke forvirres med det å «whiskes ut» som 
-  skjer ifb. at man fratrer et verv. Man kan både akkes inn og whiskes ut på samme generalforsamling om man både 
-  fratrer og tiltrer et verv.
-
 export const imagesQuery = graphql`
   query {
     akkeloff: file(relativePath: { eq: "oppskrifter/akkeloff.png" }) {
@@ -55,7 +56,7 @@ export const imagesQuery = graphql`
   }
 `
 
-export default function Layout (props) {
+export default function Layout(props) {
   return <ChapterLayout {...props} />
 }
 

@@ -10,46 +10,44 @@ next: /studentliv/kvinneandelen
 ---
 
 import ChapterLayout from "../../components/chapter-layout"
+import Footnote from '../../components/footnote'
 
-Som student på Ifi opparbeider man seg en kompetanse som er meget ettertraktet i arbeidslivet. Dette hadde man 
-skjønt mens dagen@ifi utviklet seg til å bli en profesjonell og tradisjonell bedriftsdag, og når man ville 
-starte Navet i 2006 skjønte man også at det ville være fornuftig med en mekanisme som kunne fordele pengene 
-som kom inn på dette arbeidet slik at det kom alle studentene på Ifi til gode. Dette var starten til 
+Som student på Ifi opparbeider man seg en kompetanse som er meget ettertraktet i arbeidslivet. Dette hadde man
+skjønt mens dagen@ifi utviklet seg til å bli en profesjonell og tradisjonell bedriftsdag, og når man ville
+starte Navet i 2006 skjønte man også at det ville være fornuftig med en mekanisme som kunne fordele pengene
+som kom inn på dette arbeidet slik at det kom alle studentene på Ifi til gode. Dette var starten til
 Fordelingsutvalget.
 
-At studentene på Ifi i 2006 tenkte i disse baner er noe man ikke skal ta for gitt. Det er nok av andre 
-bedriftsdager og bedriftsrepresentanter rundt om i det ganske land som velger å bruke pengene på helt andre måter 
+At studentene på Ifi i 2006 tenkte i disse baner er noe man ikke skal ta for gitt. Det er nok av andre
+bedriftsdager og bedriftsrepresentanter rundt om i det ganske land som velger å bruke pengene på helt andre måter
 enn å samle det i en stønadsordning som drives av foreningene tilknyttet undervisningsstedet.
 
-Da ordningen startet var det syv foreninger som satt i utvalget: ProsIT[^1], FUI, CYB, Navet, Mikro[^2], dagen@ifi og 
-PING[^3]. Siden da har to foreninger falt fra (ProsIT og PING) og seks nye har kommet til: Defi[^4], Digitus[^5], 
-MAPS[^6], LI:ST[^7], ProgSys[^8] og Ifi-Avis[^9]. Disse møtes syv-åtte ganger i året og hvordan pengene skal 
-fordeles generelt og om søknader som kommer inn skal støttes spesifikt.
+<p>
+  Da ordningen startet var det syv foreninger som satt i utvalget: ProsIT<Footnote>Profesjonsstudentenes
+  interesseforening</Footnote>, FUI, CYB, Navet, Mikro<Footnote>Linjeforenigen for robotikk og intelligente
+  systemer</Footnote>, dagen@ifi og PING<Footnote>Program-, Informasjons- og Nettverksteknologisk Gruppe</Footnote>.
+  Siden da har to foreninger falt fra (ProsIT og PING) og seks nye har kommet til: Defi<Footnote>Designforeningen ved
+  IFI</Footnote>, Digitus<Footnote>Linjeforeningen for studieprogrammet Informatikk: Digital Økonomi og
+  Ledelse</Footnote>, MAPS<Footnote>Matematikk, Algoritmer og Programmering for Studenter</Footnote>, LI:ST<Footnote>Linjeforening
+  for Språkteknologi</Footnote>, ProgSys<Footnote>Linjeforening for Programmering og Systemarkitektur (samt
+  Programmering og Nettverk)</Footnote> og Ifi-Avis<Footnote>Foreningen bak magasinet Output</Footnote>. Disse møtes
+  syv-åtte ganger i året og hvordan pengene skal fordeles generelt og om søknader som kommer inn skal støttes spesifikt.
+</p>
 
-Opp gjennom tiden har man jobbet for å effektivisere søknadsprosessen, og systemer har kommet på plass for å 
-støtte opp om dette. Dette lever i dag på [FU sine nettsider](https://fordelingsutvalget.org) og selve systemet er 
-åpent tilgjengelig på [GitHub](https://github.com/cybernetisk/fordelingsutvalget), i ekte open-source 
+Opp gjennom tiden har man jobbet for å effektivisere søknadsprosessen, og systemer har kommet på plass for å
+støtte opp om dette. Dette lever i dag på [FU sine nettsider](https://fordelingsutvalget.org) og selve systemet er
+åpent tilgjengelig på [GitHub](https://github.com/cybernetisk/fordelingsutvalget), i ekte open-source
 programmeringsånd.
 
-Man har også fått på plass støtter som er av mer rutinemessig art, som for eksempel at linjeforeningene får 
-1000 kr som de kan bruke fritt i løpet av semesteret. Dette har gjort at linjeforeningene har mer frihet til 
+Man har også fått på plass støtter som er av mer rutinemessig art, som for eksempel at linjeforeningene får
+1000 kr som de kan bruke fritt i løpet av semesteret. Dette har gjort at linjeforeningene har mer frihet til
 å gjøre mindre innkjøp.
 
-At tidene er gode er det ingen tvil om. Ikke sjeldent diskuteres det hvordan pengene kan forvaltes på en god 
-måte, og alt fra fond til hyttekjøp diskuteres. Uansett hvordan man ender opp med å forvalte pengene, så er 
-uansett kjernen av utvalget viktig, nemlig at det skal komme studentene på Ifi til gode. Dette er med på å 
+At tidene er gode er det ingen tvil om. Ikke sjeldent diskuteres det hvordan pengene kan forvaltes på en god
+måte, og alt fra fond til hyttekjøp diskuteres. Uansett hvordan man ender opp med å forvalte pengene, så er
+uansett kjernen av utvalget viktig, nemlig at det skal komme studentene på Ifi til gode. Dette er med på å
 styrke studiemiljøet og sørge for videre god grobunn for engasjement og gode initiativ.
 
-[^1]:Profesjonsstudentenes interesseforening
-[^2]:Linjeforenigen for robotikk og intelligente systemer
-[^3]:Program-, Informasjons- og Nettverksteknologisk Gruppe
-[^4]:Designforeningen ved IFI
-[^5]:Linjeforeningen for studieprogrammet Informatikk: Digital Økonomi og Ledelse
-[^6]:Matematikk, Algoritmer og Programmering for Studenter
-[^7]:Linjeforening for Språkteknologi
-[^8]:Linjeforening for Programmering og Systemarkitektur (samt Programmering og Nettverk)
-[^9]:Foreningen bak magasinet Output
-
-export default function Layout (props) {
+export default function Layout(props) {
   return <ChapterLayout {...props} />
 }
